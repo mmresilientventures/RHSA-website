@@ -1,0 +1,11 @@
+.contact-info a{
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+
+.contact-info a{
+    overflow-wrap: break-word;
+}
+
+

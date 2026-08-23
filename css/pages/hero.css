@@ -1,0 +1,159 @@
+/*==========================
+HERO
+==========================*/
+
+.hero-section{
+
+padding:110px 0;
+
+background:
+linear-gradient(
+rgba(15,56,110,.95),
+rgba(21,86,149,.95)),
+url("../images/header-background.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
+color:#fff;
+
+}
+
+
+
+.hero-left{
+
+text-align:center;
+
+}
+
+
+
+.hero-logo{
+
+width:250px;
+
+margin:auto;
+
+margin-bottom:15px;
+
+}
+
+
+
+.hero-sanskrit{
+
+font-size:18px;
+
+font-weight:600;
+
+letter-spacing:1px;
+
+color:#fff;
+
+}
+
+
+
+.hero-content h1{
+
+    font-size:58px;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    margin-bottom:18px;
+
+} 
+
+
+
+.hero-content h2{
+
+    font-size:24px;
+
+    font-weight:600;
+
+    color:#ffdd8d;
+
+    line-height:1.4;
+
+    margin-bottom:22px;
+
+}
+
+
+.hero-content p{
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    margin-bottom:28px;
+
+    max-width:700px;
+
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.hero-buttons .btn{
+
+    padding:15px 34px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+}
+
+.btn-warning{
+
+background:var(--secondary);
+
+border:none;
+
+color:#fff;
+
+}
+
+.btn-warning:hover{
+
+background:#c98219;
+
+color:#fff;
+
+transform:translateY(-3px);
+
+}
+
+.btn-outline-light{
+
+border:2px solid #fff;
+
+}
+
+
+.btn-outline-light:hover{
+
+background:#fff;
+
+color:var(--primary);
+
+}

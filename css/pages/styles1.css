@@ -1,0 +1,1084 @@
+/*==========================================================
+RHSA WEBSITE V3
+Resilient Healthcare Skill Academy
+==========================================================*/
+
+
+
+/*==========================
+ROOT
+==========================*/
+
+:root{
+
+--primary:#0f386e;
+--secondary:#E19A32;
+--white:#ffffff;
+--light:#f7f9fc;
+--dark:#1d1d1d;
+--grey:#6b7280;
+
+--radius:18px;
+
+--shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+--transition:.35s ease;
+
+}
+
+
+
+/*==========================
+RESET
+==========================*/
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Montserrat',sans-serif;
+
+background:#ffffff;
+
+color:#333;
+
+overflow-x:hidden;
+
+line-height:1.7;
+
+}
+
+
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+
+
+a{
+
+text-decoration:none;
+
+transition:var(--transition);
+
+}
+
+
+
+ul{
+
+list-style:none;
+
+padding:0;
+
+margin:0;
+
+}
+
+
+
+/*==========================
+COMMON
+==========================*/
+
+section{
+
+padding:60px 0;
+
+}
+
+
+
+.section-label{
+
+display:inline-block;
+
+font-size:13px;
+
+font-weight:600;
+
+letter-spacing:2px;
+
+color:var(--secondary);
+
+margin-bottom:12px;
+
+text-transform:uppercase;
+
+}
+
+
+
+.section-title{
+
+font-size:42px;
+
+font-weight:600;
+
+color:var(--primary);
+
+margin-bottom:18px;
+
+}
+
+
+
+.section-subtitle{
+
+max-width:760px;
+
+margin:auto;
+
+font-size:18px;
+
+color:#666;
+
+line-height:1.8;
+
+}
+
+
+
+/*==========================
+NAVBAR
+==========================*/
+
+.rhsa-navbar{
+
+background:#fff;
+
+box-shadow:
+
+0 8px 25px rgba(0,0,0,.08);
+
+padding:14px 0;
+
+}
+
+
+
+.parent-brand{
+
+font-size:20px;
+
+font-weight:700;
+
+color:var(--primary)!important;
+
+}
+
+
+
+.navbar-nav .nav-link{
+
+font-size:15px;
+
+font-weight:600;
+
+padding-left:18px!important;
+
+padding-right:18px!important;
+
+color:#333!important;
+
+}
+
+
+
+.navbar-nav .nav-link:hover{
+
+color:var(--secondary)!important;
+
+}
+
+
+
+.dropdown-menu{
+
+border:none;
+
+border-radius:14px;
+
+padding:10px;
+
+box-shadow:
+
+0 10px 25px rgba(0,0,0,.10);
+
+}
+
+
+
+.dropdown-item{
+
+padding:10px 18px;
+
+border-radius:8px;
+
+}
+
+
+
+.dropdown-item:hover{
+
+background:#f5f7fb;
+
+color:var(--secondary);
+
+}
+
+
+
+/*==========================
+HERO
+==========================*/
+
+.hero-section{
+
+padding:110px 0;
+
+background:
+linear-gradient(
+rgba(15,56,110,.95),
+rgba(21,86,149,.95)),
+url("../images/header-background.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
+color:#fff;
+
+}
+
+
+
+.hero-left{
+
+text-align:center;
+
+}
+
+
+
+.hero-logo{
+
+width:250px;
+
+margin:auto;
+
+margin-bottom:15px;
+
+}
+
+.hero-image{
+
+    width:100%;
+
+    max-width:520px;
+
+    height:360px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+}
+
+.hero-sanskrit{
+
+font-size:18px;
+
+font-weight:600;
+
+letter-spacing:1px;
+
+color:#fff;
+
+}
+
+
+
+.hero-content h1{
+
+    font-size:58px;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    margin-bottom:18px;
+
+} 
+
+
+
+.hero-content h2{
+
+    font-size:24px;
+
+    font-weight:600;
+
+    color:#ffdd8d;
+
+    line-height:1.4;
+
+    margin-bottom:22px;
+
+}
+
+
+.hero-content p{
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    margin-bottom:28px;
+
+    max-width:700px;
+
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.hero-buttons .btn{
+
+    padding:15px 34px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+}
+
+.btn-warning{
+
+background:var(--secondary);
+
+border:none;
+
+color:#fff;
+
+}
+
+.btn-warning:hover{
+
+background:#c98219;
+
+color:#fff;
+
+transform:translateY(-3px);
+
+}
+
+.btn-outline-light{
+
+border:2px solid #fff;
+
+}
+
+
+.btn-outline-light:hover{
+
+background:#fff;
+
+color:var(--primary);
+
+}
+/*==========================================================
+PHOENIX SECTION
+==========================================================*/
+
+.phoenix-section{
+
+background:#ffffff;
+
+padding:60px 0;
+
+}
+
+.phoenix-logo{
+
+max-width:320px;
+
+margin:auto;
+
+}
+
+.phoenix-content{
+
+padding-left:30px;
+
+}
+
+.phoenix-content h3{
+
+font-size:32px;
+
+font-weight:600;
+
+color:var(--primary);
+
+margin-bottom:20px;
+
+}
+
+.phoenix-content p{
+
+font-size:17px;
+
+line-height:1.7;
+
+margin-bottom:16px;
+
+color:#555;
+
+}
+
+.phoenix-list{
+
+margin-top:15px;
+
+margin-bottom:18px;
+
+}
+
+.phoenix-list li{
+
+position:relative;
+
+padding-left:30px;
+
+margin-bottom:14px;
+
+font-size:16px;
+
+line-height: 1.6;
+
+color:#444;
+
+}
+
+.phoenix-list li:before{
+
+content:"✓";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+font-weight:700;
+
+color:var(--secondary);
+
+font-size:20px;
+
+}
+
+.phoenix-message{
+
+margin-top:30px;
+
+padding:32px;
+
+border-radius:18px;
+
+background:linear-gradient(
+135deg,
+#0f386e,
+#1f4f8d);
+
+text-align:center;
+
+box-shadow:var(--shadow);
+
+}
+
+.phoenix-message h4{
+
+margin:0;
+
+color:#fff;
+
+font-size:26px;
+
+font-weight:600;
+
+line-height:1.5;
+
+}
+
+
+
+/*==========================================================
+PROGRAMMES
+==========================================================*/
+
+.programmes-section{
+
+background:#f7f9fc;
+
+}
+
+.programme-card{
+
+background:#fff;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:0 8px 24px rgba(0,0,0,.08);
+
+transition:.35s ease;
+
+height:100%;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.programme-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 18px 45px rgba(0,0,0,.15);
+
+}
+
+.programme-card img{
+
+width:100%;
+
+height:230px;
+
+object-fit:cover;
+
+}
+
+.programme-content{
+
+padding:24px;
+
+display:flex;
+
+flex-direction:column;
+
+height:100%;
+
+}
+
+.programme-content h3{
+
+font-size:23px;
+
+font-weight:600;
+
+line-height:1.3;
+
+color:var(--primary);
+
+margin-bottom:16px;
+
+min-height:66px;
+
+}
+
+.programme-content p{
+
+font-size:16px;
+
+line-height:1.65;
+
+color:#666;
+
+flex-grow:1;
+
+margin-bottom:25px;
+
+}
+
+.programme-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+font-weight:600;
+
+color:var(--secondary);
+
+}
+
+.programme-btn:hover{
+
+gap:14px;
+
+color:var(--primary);
+
+}
+
+.programme-btn i{
+
+transition:.3s;
+
+}
+
+.programme-card:hover .programme-btn i{
+
+transform:translateX(6px);
+
+}
+/*==========================================================
+TESTIMONIALS
+==========================================================*/
+
+.testimonials-section{
+
+background:#ffffff;
+
+}
+
+.testimonial-card{
+
+max-width:850px;
+
+margin:auto;
+
+background:#fff;
+
+padding:40px;
+
+border-radius:18px;
+
+box-shadow:0 10px 28px rgba(0,0,0,.08);
+
+text-align:center;
+
+}
+
+.testimonial-card p{
+
+font-size:19px;
+
+line-height:1.8;
+
+font-style:italic;
+
+color:#555;
+
+margin-bottom:30px;
+
+}
+
+.testimonial-card h5{
+
+font-size:20px;
+
+font-weight:600;
+
+color:var(--primary);
+
+margin-bottom:8px;
+
+}
+
+.testimonial-card span{
+
+font-size:16px;
+
+color:#888;
+
+}
+
+
+
+/*==========================================================
+ENQUIRY
+==========================================================*/
+
+.enquiry-section{
+
+background:#0f386e;
+
+color:#fff;
+
+ padding-bottom:30px;
+
+}
+
+.enquiry-section h2{
+
+font-size:40px;
+
+font-weight:600;
+
+margin-bottom:20px;
+
+}
+
+.enquiry-section p{
+
+font-size:17px;
+
+line-height:1.7;
+
+}
+
+.enquiry-card{
+
+background:#fff;
+
+padding:28px;
+
+border-radius:20px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.form-control{
+
+height:50px;
+
+border-radius:12px;
+
+margin-bottom:14px;
+
+border:1px solid #ddd;
+
+padding-left:18px;
+
+}
+
+textarea.form-control{
+
+height:120px;
+
+padding-top:18px;
+
+resize:none;
+
+}
+
+.form-control:focus{
+
+border-color:var(--secondary);
+
+box-shadow:none;
+
+}
+
+/*----------------------------------------
+ENQUIRY CONTENT
+----------------------------------------*/
+
+.enquiry-intro{
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+
+}
+
+.enquiry-text{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#fff;
+
+    margin-bottom:15px;
+
+}
+
+.enquiry-list{
+
+    margin-bottom:22px;
+
+}
+
+.enquiry-list li{
+
+    position:relative;
+
+    padding-left:28px;
+
+    margin-bottom:12px;
+
+    font-size:17px;
+
+    line-height:1.6;
+
+}
+
+.enquiry-list li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    color:var(--secondary);
+
+    font-weight:700;
+
+}
+
+.enquiry-footer{
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    margin-bottom:0;
+
+}
+
+
+/*==========================================================
+FOOTER
+==========================================================*/
+
+.footer-section{
+
+    background:
+    linear-gradient(
+    rgba(15,56,110,.95),
+    rgba(15,56,110,.95)),
+    url("../images/header-background.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    color:#fff;
+
+    padding:35px 0 15px;
+
+}
+
+
+
+/*----------------------------------------------------------
+LOGO
+----------------------------------------------------------*/
+
+.footer-logo{
+
+    width:105px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+/*----------------------------------------------------------
+HEADINGS
+----------------------------------------------------------*/
+
+.footer-section h4{
+
+    font-size:28px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+    color:#fff;
+
+}
+
+.footer-section h5{
+
+    font-size:19px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+    color:#fff;
+
+}
+
+
+
+/*----------------------------------------------------------
+TEXT
+----------------------------------------------------------*/
+
+.footer-section p{
+
+    color:#D8E0EA;
+
+    font-size:16px;
+
+    line-height:1.65;
+
+    margin-bottom:16px;
+
+}
+
+
+
+/*----------------------------------------------------------
+LINKS
+----------------------------------------------------------*/
+
+.footer-links{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.footer-links li{
+
+    margin-bottom:8px;
+
+}
+
+.footer-links a{
+
+    color:#D8E0EA;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:var(--secondary);
+
+    text-decoration:none;
+
+}
+
+
+
+/*----------------------------------------------------------
+SOCIAL ICONS
+----------------------------------------------------------*/
+
+.footer-social{
+
+    margin-top:5px;
+
+}
+
+.footer-social a{
+
+    width:40px;
+
+    height:40px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    margin-right:10px;
+
+    transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+    background:var(--secondary);
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/*----------------------------------------------------------
+DIVIDER
+----------------------------------------------------------*/
+
+.footer-section hr{
+
+    border-color:rgba(255,255,255,.12);
+
+    margin:10px 0 8px;
+
+}
+
+
+
+/*----------------------------------------------------------
+COPYRIGHT
+----------------------------------------------------------*/
+
+.copyright{
+
+    margin:0;
+
+    text-align:center;
+
+    font-size:15px;
+
+    color:#C8D3DF;
+
+}

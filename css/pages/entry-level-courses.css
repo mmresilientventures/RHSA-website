@@ -1,0 +1,967 @@
+/*=========================================================
+ENTRY LEVEL COURSES PAGE
+Resilient Healthcare Skill Academy
+=========================================================*/
+
+
+/*==============================
+GENERAL
+==============================*/
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#ffffff;
+    color:#333;
+}
+
+.entry-page{
+
+    padding-top:95px;      /* fixes navbar overlap */
+
+}
+
+
+/*==============================
+SECTION SPACING
+==============================*/
+
+section{
+
+    padding:60px 0;
+
+}
+
+.container{
+
+    max-width:1200px;
+
+}
+
+
+/*==============================
+HEADINGS
+==============================*/
+
+.section-title{
+
+    font-size:36px;
+
+    font-weight:700;
+
+    color:#123E73;
+
+    margin-bottom:18px;
+
+}
+
+.section-subtitle{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#F59E0B;
+
+    text-transform:uppercase;
+
+    letter-spacing:.8px;
+
+    margin-bottom:12px;
+
+}
+
+.section-text{
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    color:#555;
+
+}
+
+
+/*=========================================================
+HERO SECTION
+=========================================================*/
+
+.entry-hero{
+
+    background:#ffffff;
+
+    padding-top:40px;
+
+    padding-bottom:55px;
+
+}
+
+.entry-hero .row{
+
+    align-items:center;
+
+}
+
+.entry-hero h1{
+
+    font-size:48px;
+
+    line-height:1.15;
+
+    font-weight:700;
+
+    color:#123E73;
+
+    margin-bottom:22px;
+
+}
+
+.entry-hero p{
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    color: #333;
+    font-weight: 400;
+
+    max-width:520px;
+
+}
+
+.entry-hero img{
+
+    width:100%;
+
+    border-radius:10px;
+
+    display:block;
+
+}
+
+
+/*==============================
+RESPONSIVE HERO
+==============================*/
+
+@media(max-width:991px){
+
+.entry-page{
+
+padding-top:85px;
+
+}
+
+.entry-hero{
+
+text-align:center;
+
+}
+
+.entry-hero h1{
+
+font-size:40px;
+
+}
+
+.entry-hero p{
+
+margin:0 auto;
+
+}
+
+.entry-hero img{
+
+margin-top:35px;
+
+}
+
+}
+
+
+@media(max-width:576px){
+
+.entry-hero h1{
+
+font-size:32px;
+
+}
+
+.section-title{
+
+font-size:28px;
+
+}
+
+.section-text{
+
+font-size:16px;
+
+}
+
+}
+/*=========================================================
+2. CAREER OPPORTUNITY
+=========================================================*/
+
+.career-opportunity{
+
+    background:#ffffff;
+
+    padding:35px 0 25px;
+
+    text-align:center;
+
+}
+
+.career-opportunity h2{
+
+    font-size:36px;
+
+    font-weight:700;
+
+    color:#123E73;
+
+    margin-bottom:25px;
+
+}
+
+.career-opportunity p{
+
+    max-width:980px;
+
+    margin:0 auto 22px;
+
+    font-size:17px;
+
+    line-height:1.75;
+
+    color:#555;
+
+}
+
+.career-opportunity .highlight{
+
+    font-weight:700;
+
+    color:#123E73;
+
+}
+/*=========================================================
+3. COURSE CARDS
+=========================================================*/
+
+.course-section{
+
+    padding-top:20px;
+
+    padding-bottom:55px;
+
+}
+
+.course-section h2{
+
+    text-align:center;
+
+    font-size:38px;
+
+    font-weight:700;
+
+    color:#123E73;
+
+    margin-bottom:40px;
+
+}
+.course-section p{
+
+    max-width:900px;
+
+    margin:0 auto 35px;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    font-weight:400;
+
+    color:#333;
+
+    text-align:center;
+
+}
+
+.course-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    height:100%;
+
+}
+
+.course-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+.course-card img{
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+}
+
+.course-card-body{
+
+    padding:18px;
+
+}
+
+.course-card h3{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#123E73;
+
+    margin-bottom:15px;
+
+}
+
+.course-card p{
+
+    font-size:16px;
+
+    line-height:1.6;
+
+    color:#333;
+
+    margin-bottom:24px;
+
+}
+
+.course-btn{
+
+    width:100%;
+
+    padding:12px 18px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    border-radius:8px;
+
+}
+
+.coming-soon{
+
+    background:#ffffff;
+
+    color:#F59E0B;
+
+    border:2px solid #F59E0B;
+
+}
+
+.course-icon{
+
+    position:absolute;
+
+    width:62px;
+
+    height:62px;
+
+    bottom:-30px;
+
+    left:22px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.course-image{
+
+    position:relative;
+
+    margin-bottom:25px;
+
+}
+
+.course-icon img{
+
+    width:34px;
+
+    height:34px;
+
+}
+/*=========================================================
+4. CERTIFICATION
+=========================================================*/
+
+.certification-section{
+
+    padding:60px 0;
+
+}
+
+.certificate-box{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    height:100%;
+
+}
+
+.certificate-box img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+.certification-content{
+
+    padding:15px 10px 15px 35px;
+
+}
+
+.certification-content h2{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#123E73;
+
+    margin-bottom:18px;
+
+}
+
+.certification-content p{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#555;
+
+    margin-bottom:28px;
+
+}
+
+.certification-icons{
+
+    display:flex;
+
+    gap:45px;
+
+    flex-wrap:wrap;
+
+}
+
+.certification-icons div{
+
+    text-align:center;
+
+}
+
+.certification-icons img{
+
+    width:46px;
+
+    margin-bottom:10px;
+
+}
+
+.certification-icons h6{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#123E73;
+
+    margin:0;
+
+}
+/*=========================================================
+5. PLACEMENT OPPORTUNITIES
+=========================================================*/
+
+.placement-section{
+
+    padding:55px 0;
+
+    text-align:center;
+
+}
+
+.placement-section h2{
+
+    font-size:34px;
+
+    color:#123E73;
+
+    font-weight:700;
+
+    margin-bottom:45px;
+
+}
+
+.placement-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:25px;
+
+}
+
+.placement-card{
+
+    text-align:center;
+
+}
+
+.placement-card img{
+
+    width:60px;
+
+    height:60px;
+
+    margin-bottom:12px;
+
+}
+
+.placement-card h5{
+
+    font-size:15px;
+
+    font-weight:500;
+
+    color:#333;
+
+    line-height:1.5;
+
+    margin: top 8px;
+}
+/*=========================================================
+6. TRAINING CENTRES
+=========================================================*/
+
+.centres-section{
+
+    padding:40px 0 65px;
+
+}
+
+.centres-section h2{
+
+    text-align:center;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#123E73;
+
+    margin-bottom:35px;
+
+}
+
+.centre-card{
+
+    background:#fff;
+
+    border-radius:12px;
+
+    border:1px solid #e7e7e7;
+
+    padding:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    height:100%;
+
+    transition:.3s;
+
+}
+
+.centre-card:hover{
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.centre-card img{
+
+    width:52px;
+
+    height:52px;
+
+}
+
+.centre-card h5{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#123E73;
+
+}
+
+.centre-card p{
+
+    margin:5px 0 0;
+
+    color:#666;
+
+    font-size:16px;
+
+}
+/*=========================================================
+7. FAQ
+=========================================================*/
+
+.faq-section{
+
+    padding:60px 0;
+
+}
+
+.faq-section h2{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#123E73;
+
+    margin-bottom:30px;
+
+}
+
+.faq-item{
+
+    background:#fff;
+
+    border:1px solid #e8e8e8;
+
+    border-radius:8px;
+
+    margin-bottom:12px;
+
+    overflow:hidden;
+
+}
+
+.faq-question{
+
+    width:100%;
+
+    background:#fff;
+
+    border:none;
+
+    padding:18px 25px;
+
+    text-align:left;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:#333;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.faq-question span{
+
+    font-size:28px;
+
+    color:#123E73;
+
+    font-weight:300;
+
+}
+
+.faq-answer{
+
+    display:none;
+
+    padding:0 25px 20px;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    color:#555;
+
+}
+
+.faq-item.active .faq-answer{
+
+    display:block;
+
+}
+
+.faq-item.active .faq-question span{
+
+    content:"−";
+
+}
+/*=========================================================
+8. ENQUIRY FORM
+=========================================================*/
+
+.enquiry-section{
+
+    background:#123E73;
+
+    padding:40px 0;
+
+}
+
+.enquiry-section h2{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    margin-bottom:25px;
+
+}
+
+.enquiry-card{
+
+    background:#ffffff;
+
+    padding:28px;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+}
+
+.enquiry-form .form-control{
+
+    height:48px;
+
+    border-radius:6px;
+
+    border:1px solid #ddd;
+
+    padding:10px 15px;
+
+    margin-bottom:18px;
+
+    font-size:15px;
+
+    color:#333;
+
+}
+
+.enquiry-form textarea.form-control{
+
+    height:110px;
+
+    padding-top:12px;
+
+    resize:none;
+
+}
+
+.enquiry-btn{
+
+    width:100%;
+
+    background:#123E73;
+
+    color:#ffffff;
+
+    border:none;
+
+    border-radius:6px;
+
+    padding:12px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.enquiry-btn:hover{
+
+    background:#0d2d56;
+
+}
+
+.callback-box button{
+
+    width:100%;
+
+    border:none;
+
+    background:#123E73;
+
+    color:#ffffff;
+
+    padding: 12px;
+
+    border-radius:6px;
+
+    font: size 15px;
+
+    font-weight:600;
+
+}
+
+.callback-box button:hover{
+
+    background:#0d2d56;
+
+}
+/*=========================================================
+9. RESPONSIVE
+=========================================================*/
+
+@media(max-width:991px){
+
+.placement-grid{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+.certification-icons{
+
+justify-content:center;
+
+}
+
+.course-card{
+
+margin-bottom:30px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.placement-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.centre-card{
+
+margin-bottom:20px;
+
+}
+
+.certification-content{
+
+padding:30px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.placement-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.entry-hero{
+
+text-align:center;
+
+}
+
+.entry-hero img{
+
+margin-top:25px;
+
+}
+
+.callback-box{
+
+padding:25px;
+
+}
+
+.section-title,
+
+.course-section h2,
+
+.centres-section h2,
+
+.callback-box h2,
+
+.certification-content h2,
+
+.placement-section h2,
+
+.faq-section h2{
+
+font-size:28px;
+
+}
+
+}

@@ -1,0 +1,932 @@
+/*==========================================================
+RHSA WEBSITE MASTER STYLESHEET
+Resilient Healthcare Skill Academy
+Version 2.0
+==========================================================*/
+
+
+
+/*==========================================================
+1. ROOT VARIABLES
+Used throughout the entire website
+==========================================================*/
+
+:root{
+
+    /* Brand Colours */
+    --primary:#0F386E;
+    --secondary:#E19A32;
+
+    --white:#FFFFFF;
+    --light:#F7F9FC;
+    --dark:#1D1D1D;
+    --grey:#6B7280;
+
+    /* Border Radius */
+
+    --radius:18px;
+
+    /* Shadows */
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    --shadow-hover:
+    0 18px 45px rgba(0,0,0,.15);
+
+    /* Animation */
+
+    --transition:.35s ease;
+
+    /* Website Standards */
+
+    --section-padding:70px;
+
+    --line-height:1.6;
+
+    --hero-height:500px;
+
+    --card-radius:20px;
+
+    --form-height:52px;
+
+}
+
+
+
+/*==========================================================
+2. RESET
+==========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Montserrat',sans-serif;
+
+    background:var(--white);
+
+    color:#333;
+
+    overflow-x:hidden;
+
+    line-height:var(--line-height);
+
+    font-size:16px;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+}
+
+ul{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+
+
+/*==========================================================
+3. WEBSITE STANDARDS
+==========================================================*/
+
+
+
+/*--------------------------
+SECTION SPACING
+--------------------------*/
+
+section{
+
+    padding:var(--section-padding) 0;
+
+}
+
+
+
+/*--------------------------
+HEADINGS
+--------------------------*/
+
+.section-label{
+
+    display:inline-block;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:var(--secondary);
+
+    margin-bottom:12px;
+
+}
+
+.section-title{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+}
+
+.section-subtitle{
+
+    max-width:760px;
+
+    margin:auto;
+
+    font-size:18px;
+
+    color:#666;
+
+    line-height:1.6;
+
+}
+
+
+
+/*--------------------------
+STANDARD HERO IMAGE
+--------------------------*/
+
+.hero-banner img{
+
+    width:100%;
+
+    height:var(--hero-height);
+
+    object-fit:cover;
+
+    border-radius:var(--radius);
+
+}
+
+
+
+/*--------------------------
+STANDARD TABLE
+--------------------------*/
+
+.rhsa-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:30px 0;
+
+    background:#fff;
+
+}
+
+.rhsa-table th{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    padding:14px 18px;
+
+    text-align:left;
+
+    font-weight:700;
+
+}
+
+.rhsa-table td{
+
+    padding:14px 18px;
+
+    border-bottom:1px solid #e8e8e8;
+
+}
+
+.rhsa-table tr:nth-child(even){
+
+    background:#f7f9fc;
+
+}
+
+.rhsa-table tr:hover{
+
+    background:#eef4fb;
+
+}
+
+
+
+/*--------------------------
+STANDARD BUTTONS
+--------------------------*/
+
+.btn{
+
+    border-radius:50px;
+
+    padding:14px 32px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-warning{
+
+    background:var(--secondary);
+
+    border:none;
+
+    color:#fff;
+
+}
+
+.btn-warning:hover{
+
+    background:#C98219;
+
+    color:#fff;
+
+    transform:translateY(-3px);
+
+}
+
+.btn-outline-light{
+
+    border:2px solid #fff;
+
+}
+
+.btn-outline-light:hover{
+
+    background:#fff;
+
+    color:var(--primary);
+
+}
+
+
+
+/*--------------------------
+STANDARD CARD
+--------------------------*/
+
+.rhsa-card{
+
+    background:#fff;
+
+    border-radius:var(--card-radius);
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+    transition:var(--transition);
+
+}
+
+.rhsa-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+
+
+/*--------------------------
+STANDARD FORMS
+--------------------------*/
+
+.form-control{
+
+    height:var(--form-height);
+
+    border-radius:12px;
+
+    border:1px solid #D8D8D8;
+
+    padding:0 18px;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+
+    background:#fff;
+
+}
+
+textarea.form-control{
+
+    height:160px;
+
+    padding:16px 18px;
+
+    resize:none;
+
+}
+
+.form-control:focus{
+
+    border-color:var(--secondary);
+
+    box-shadow:0 0 0 3px rgba(225,154,50,.15);
+
+}
+
+
+/*==========================================================
+4. COMMON WEBSITE COMPONENTS
+Used throughout the website
+==========================================================*/
+
+
+/*----------------------------------------------------------
+CONTAINERS
+----------------------------------------------------------*/
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/*----------------------------------------------------------
+STANDARD IMAGES
+----------------------------------------------------------*/
+
+.img-rounded{
+
+    border-radius:var(--radius);
+
+}
+
+.img-shadow{
+
+    box-shadow:var(--shadow);
+
+}
+
+.img-hover{
+
+    transition:var(--transition);
+
+}
+
+.img-hover:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+
+
+/*----------------------------------------------------------
+STANDARD CONTENT BLOCK
+----------------------------------------------------------*/
+
+.content-block{
+
+    margin-bottom:40px;
+
+}
+
+.content-block h2{
+
+    color:var(--primary);
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.content-block h3{
+
+    color:var(--primary);
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.content-block h4{
+
+    color:var(--primary);
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:16px;
+
+}
+
+.content-block p{
+
+    color:#555;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+
+}
+
+
+
+/*----------------------------------------------------------
+STANDARD LIST
+----------------------------------------------------------*/
+
+.rhsa-list{
+
+    margin-top:25px;
+
+}
+
+.rhsa-list li{
+
+    position:relative;
+
+    padding-left:32px;
+
+    margin-bottom:14px;
+
+    line-height:1.7;
+
+}
+
+.rhsa-list li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    color:var(--secondary);
+
+    font-weight:700;
+
+    font-size:18px;
+
+}
+
+
+
+/*----------------------------------------------------------
+STANDARD CARDS
+----------------------------------------------------------*/
+
+.card-title{
+
+    color:var(--primary);
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.card-text{
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+
+
+/*----------------------------------------------------------
+SECTION BACKGROUNDS
+----------------------------------------------------------*/
+
+.bg-white{
+
+    background:#fff;
+
+}
+
+.bg-light{
+
+    background:var(--light);
+
+}
+
+.bg-primary{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+
+
+/*----------------------------------------------------------
+UTILITY SPACING
+----------------------------------------------------------*/
+
+.mt-30{
+
+    margin-top:30px;
+
+}
+
+.mt-50{
+
+    margin-top:50px;
+
+}
+
+.mb-30{
+
+    margin-bottom:30px;
+
+}
+
+.mb-50{
+
+    margin-bottom:50px;
+
+}
+
+
+
+/*----------------------------------------------------------
+TEXT HELPERS
+----------------------------------------------------------*/
+
+.text-primary{
+
+    color:var(--primary)!important;
+
+}
+
+.text-secondary{
+
+    color:var(--secondary)!important;
+
+}
+
+.text-grey{
+
+    color:var(--grey)!important;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+
+/*==========================================================
+5. NAVIGATION
+==========================================================*/
+
+
+/*----------------------------------------------------------
+MAIN NAVBAR
+----------------------------------------------------------*/
+
+.rhsa-navbar{
+
+    background:#fff;
+
+    padding:14px 0;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:var(--transition);
+
+}
+
+.parent-brand{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:var(--primary)!important;
+
+}
+
+
+
+/*----------------------------------------------------------
+NAVIGATION LINKS
+----------------------------------------------------------*/
+
+.navbar-nav .nav-link{
+
+    color:#333!important;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    padding-left:18px!important;
+
+    padding-right:18px!important;
+
+    transition:var(--transition);
+
+}
+
+.navbar-nav .nav-link:hover,
+
+.navbar-nav .nav-link:focus{
+
+    color:var(--secondary)!important;
+
+}
+
+
+
+/*----------------------------------------------------------
+ACTIVE MENU
+----------------------------------------------------------*/
+
+.navbar-nav .nav-link.active{
+
+    color:var(--secondary)!important;
+
+}
+
+
+
+/*----------------------------------------------------------
+DROPDOWN
+----------------------------------------------------------*/
+
+.dropdown-menu{
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:10px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+}
+
+.dropdown-item{
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    transition:var(--transition);
+
+}
+
+.dropdown-item:hover{
+
+    background:#F7F9FC;
+
+    color:var(--secondary);
+
+}
+
+
+
+/*----------------------------------------------------------
+NAVBAR BUTTON
+----------------------------------------------------------*/
+
+.navbar .btn{
+
+    border-radius:40px;
+
+    padding:12px 28px;
+
+}
+
+
+/*==========================================================
+6. FOOTER
+==========================================================*/
+
+
+.footer-section{
+
+    background:#0D2F59;
+
+    color:#fff;
+
+    padding:70px 0 25px;
+
+}
+
+.footer-logo{
+
+    width:90px;
+
+    margin-bottom:20px;
+
+}
+
+.footer-section h4{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+    color:#fff;
+
+}
+
+.footer-section h5{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+    color:#fff;
+
+}
+
+.footer-section p{
+
+    color:#D8E0EA;
+
+    line-height:1.7;
+
+    margin-bottom:15px;
+
+}
+
+
+
+/*----------------------------------------------------------
+FOOTER LINKS
+----------------------------------------------------------*/
+
+.footer-links{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.footer-links li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-links a{
+
+    color:#D8E0EA;
+
+    transition:var(--transition);
+
+}
+
+.footer-links a:hover{
+
+    color:var(--secondary);
+
+    padding-left:6px;
+
+}
+
+
+
+/*----------------------------------------------------------
+SOCIAL ICONS
+----------------------------------------------------------*/
+
+.footer-social{
+
+    margin-top:25px;
+
+}
+
+.footer-social a{
+
+    width:42px;
+
+    height:42px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    margin-right:10px;
+
+    transition:var(--transition);
+
+}
+
+.footer-social a:hover{
+
+    background:var(--secondary);
+
+    transform:translateY(-4px);
+
+}
+
+
+
+/*----------------------------------------------------------
+FOOTER DIVIDER
+----------------------------------------------------------*/
+
+.footer-section hr{
+
+    border-color:rgba(255,255,255,.12);
+
+    margin:45px 0 25px;
+
+}
+
+.copyright{
+
+    margin:0;
+
+    color:#C8D3DF;
+
+    font-size:15px;
+
+}

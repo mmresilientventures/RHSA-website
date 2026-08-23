@@ -1,0 +1,1458 @@
+/*====================================================
+    HOSPITAL TRAINING PAGE
+    GLOBAL
+====================================================*/
+
+body{
+    font-family:'Montserrat',sans-serif;
+    color:#333333;
+    background:#ffffff;
+}
+
+section{
+    position:relative;
+}
+
+.section-title{
+    margin-bottom:45px;
+}
+
+.section-title h2{
+
+    font-size:2.35rem;
+
+    font-weight:700;
+
+    color:#123E73;
+
+    margin-bottom:18px;
+
+    line-height:1.25;
+
+}
+
+.title-line{
+
+    width:75px;
+
+    height:4px;
+
+    background:#F47C20;
+
+    margin:0 auto;
+
+    border-radius:20px;
+
+}
+
+
+/*====================================================
+    HERO SECTION
+====================================================*/
+
+.pdp-hero{
+
+    padding:80px 0 65px;
+
+    background:#ffffff;
+
+}
+
+.hero-content{
+
+    padding-right:20px;
+
+}
+
+.hero-content h1{
+
+    font-size:3.15rem;
+
+    font-weight:700;
+
+    color:#123E73;
+
+    line-height:1.18;
+
+    margin-bottom:18px;
+
+}
+
+.hero-divider{
+
+    width:80px;
+
+    height:4px;
+
+    background:#F47C20;
+
+    border-radius:20px;
+
+    margin-bottom:22px;
+
+}
+
+.hero-content p{
+
+    font-size:1.08rem;
+
+    color:#555555;
+
+    line-height:1.9;
+
+    margin-bottom:32px;
+
+    max-width:540px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-image{
+
+    text-align:right;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:660px;
+
+    border-radius:14px;
+
+    display:block;
+
+    margin-left:auto;
+
+}
+
+
+/*====================================================
+    COMMON BUTTONS
+====================================================*/
+
+.hero-buttons .btn,
+
+.programme-btn,
+
+.custom-training-section .btn{
+
+    border-radius:8px;
+
+    font-size:0.96rem;
+
+    font-weight:600;
+
+    padding:12px 28px;
+
+    transition:.30s ease;
+
+}
+
+
+/* Primary */
+
+.hero-buttons .btn-primary,
+
+.programme-btn,
+
+.custom-training-section .btn-primary{
+
+    background:#F47C20;
+
+    border:2px solid #F47C20;
+
+    color:#ffffff;
+
+}
+
+.hero-buttons .btn-primary:hover,
+
+.programme-btn:hover,
+
+.custom-training-section .btn-primary:hover{
+
+    background:#d9660c;
+
+    border-color:#d9660c;
+
+    color:#ffffff;
+
+}
+
+
+/* Outline */
+
+.hero-buttons .btn-outline-primary{
+
+    background:#ffffff;
+
+    border:2px solid #123E73;
+
+    color:#123E73;
+
+}
+
+.hero-buttons .btn-outline-primary:hover{
+
+    background:#123E73;
+
+    color:#ffffff;
+
+}
+
+
+/*====================================================
+    COMMON TYPOGRAPHY
+====================================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    color:#123E73;
+
+    font-weight:700;
+
+}
+
+p{
+
+    color:#555555;
+
+    line-height:1.8;
+
+}
+
+ul{
+
+    padding-left:20px;
+
+}
+
+li{
+
+    line-height:1.7;
+
+}
+
+
+/*====================================================
+    SECTION 02
+    PROFESSIONAL DEVELOPMENT PROGRAMMES
+====================================================*/
+
+.professional-programmes{
+    padding:55px 0;
+    background:#ffffff;
+}
+
+.professional-programmes .section-title{
+    margin-bottom:40px;
+}
+
+
+/*====================================================
+    PROGRAMME CARD
+====================================================*/
+
+.programme-card{
+
+    background:#ffffff;
+
+    border:1px solid #E8ECF2;
+
+    border-radius:14px;
+
+    padding:25px;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:all .30s ease;
+
+}
+
+.programme-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 14px 30px rgba(18,62,115,.10);
+
+}
+
+
+/*====================================================
+    COURSE IMAGE
+====================================================*/
+
+.programme-icon{
+
+    margin-bottom:22px;
+
+    overflow:hidden;
+
+    border-radius:10px;
+
+}
+
+.programme-icon img{
+
+    width:100%;
+
+    height:210px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.45s;
+
+}
+
+.programme-card:hover .programme-icon img{
+
+    transform:scale(1.04);
+
+}
+
+
+/*====================================================
+    TITLE
+====================================================*/
+
+.programme-card h3{
+
+    color:#123E73;
+
+    font-size:1.35rem;
+
+    font-weight:700;
+
+    line-height:1.30;
+
+    margin-bottom:12px;
+
+}
+
+
+/*====================================================
+    TAGLINE
+====================================================*/
+
+.programme-tagline{
+
+    color:#666666;
+
+    font-size:.95rem;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+
+    min-height:58px;
+
+}
+
+
+/*====================================================
+    DURATION / MODE
+====================================================*/
+
+.programme-info{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    margin-bottom:10px;
+
+    font-size:.92rem;
+
+    color:#444444;
+
+}
+
+.programme-info span{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    line-height:1.6;
+
+}
+
+.programme-info i{
+
+    color:#F47C20;
+
+    margin-right:10px;
+
+    font-size:.95rem;
+
+    width:18px;
+
+    text-align:center;
+
+    margin-top:3px;
+
+}
+
+
+/*====================================================
+    IDEAL FOR
+====================================================*/
+
+.programme-card h6{
+
+    color:#123E73;
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    margin-top:16px;
+
+    margin-bottom:10px;
+
+}
+
+.programme-card ul{
+
+    margin:0;
+
+    padding-left:18px;
+
+    flex-grow:1;
+
+}
+
+.programme-card li{
+
+    color:#555555;
+
+    font-size:.92rem;
+
+    line-height:1.75;
+
+    margin-bottom:4px;
+
+}
+
+
+/*====================================================
+    ENQUIRE BUTTON
+====================================================*/
+
+.programme-btn{
+
+    margin-top:22px;
+
+    display:inline-block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    width:100%;
+
+    background:#F47C20;
+
+    color:#ffffff;
+
+    border-radius:8px;
+
+    padding:12px 18px;
+
+    font-weight:600;
+
+    transition:.30s;
+
+}
+
+.programme-btn:hover{
+
+    background:#d96508;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+}
+
+
+/*====================================================
+    CARD HEIGHT
+====================================================*/
+
+.professional-programmes .row>[class*="col-"]{
+
+    display:flex;
+
+    margin-bottom:28px;
+
+}
+
+.professional-programmes .programme-card{
+
+    width:100%;
+
+}
+
+
+/*====================================================
+    SECTION 03
+    CUSTOMIZED TRAINING
+====================================================*/
+
+.custom-training-section{
+
+    padding:55px 0;
+
+    background:#ffffff;
+
+}
+
+.custom-training-box{
+
+    background:#FFF8F1;
+
+    border:1px solid rgba(244,124,32,.18);
+
+    border-radius:16px;
+
+    padding:38px 40px;
+
+}
+
+.custom-training-image{
+
+    text-align:center;
+
+}
+
+.custom-training-image img{
+
+    width:110px;
+
+    max-width:100%;
+
+}
+
+.custom-training-content h2{
+
+    font-size:2rem;
+
+    color:#123E73;
+
+    font-weight:700;
+
+    line-height:1.3;
+
+    margin-bottom:20px;
+
+}
+
+.custom-training-content p{
+
+    color:#555;
+
+    line-height:1.9;
+
+    margin-bottom:14px;
+
+}
+
+.custom-training-content strong{
+
+    color:#123E73;
+
+}
+
+.custom-training-section .btn{
+
+    padding:14px 28px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    white-space:normal;
+
+}
+
+
+
+/*====================================================
+    SECTION 04
+    WHY CHOOSE RHSA
+====================================================*/
+
+.why-rhsa{
+
+    padding:55px 0;
+
+    background:#ffffff;
+
+}
+
+.why-rhsa .section-title{
+
+    margin-bottom:45px;
+
+}
+
+
+/* Five Equal Columns */
+
+.why-rhsa .row{
+
+    display:flex;
+
+    flex-wrap:nowrap;
+
+}
+
+
+/*====================================================
+    WHY CARD
+====================================================*/
+
+.why-card{
+
+    text-align:center;
+
+    padding:15px 20px;
+
+    height:100%;
+
+    position:relative;
+
+}
+
+
+/* Vertical Divider */
+
+.why-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:20px;
+
+    right:0;
+
+    width:1px;
+
+    height:75%;
+
+    background:#E8ECF2;
+
+}
+
+.why-rhsa .col-lg:last-child .why-card::after{
+
+    display:none;
+
+}
+
+
+/*====================================================
+    ICON
+====================================================*/
+
+.why-icon{
+
+    width:82px;
+
+    height:82px;
+
+    margin:0 auto 22px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+}
+
+
+/* 25% Larger than School */
+
+.why-icon i{
+
+    font-size:34px;
+
+}
+
+
+/* Individual Colours */
+
+.why-icon.mode{
+
+    background:#123E73;
+
+}
+
+.why-icon.certification{
+
+    background:#F47C20;
+
+}
+
+.why-icon.costing{
+
+    background:#3FA76A;
+
+}
+
+.why-icon.cadre{
+
+    background:#8C52C8;
+
+}
+
+.why-icon.learning{
+
+    background:#11A3AE;
+
+}
+
+
+/*====================================================
+    TEXT
+====================================================*/
+
+.why-card h5{
+
+    color:#123E73;
+
+    font-size:1.08rem;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+    line-height:1.4;
+
+}
+
+.why-card p{
+
+    color:#666;
+
+    font-size:.92rem;
+
+    line-height:1.75;
+
+    margin-bottom:0;
+
+}
+
+
+/*====================================================
+    HOVER
+====================================================*/
+
+.why-card{
+
+    transition:.30s;
+
+}
+
+.why-card:hover .why-icon{
+
+    transform:scale(1.08);
+
+    transition:.30s;
+
+}
+
+
+/*====================================================
+    SECTION 05
+    FAQ
+====================================================*/
+
+.faq-section{
+
+    padding:55px 0;
+
+    background:#ffffff;
+
+}
+
+.faq-section .section-title{
+
+    margin-bottom:40px;
+
+}
+
+.faq-section .card{
+
+    border:none;
+
+    border-bottom:1px solid #E7ECF2;
+
+    border-radius:0;
+
+    margin-bottom:0;
+
+    box-shadow:none;
+
+}
+
+.faq-section .card-header{
+
+    background:#ffffff;
+
+    border:none;
+
+    padding:0;
+
+}
+
+.faq-section .btn-link{
+
+    width:100%;
+
+    padding:18px 40px 18px 0;
+
+    color:#123E73;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    text-align:left;
+
+    text-decoration:none;
+
+    position:relative;
+
+}
+
+.faq-section .btn-link:hover,
+
+.faq-section .btn-link:focus{
+
+    color:#123E73;
+
+    text-decoration:none;
+
+}
+
+
+.faq-section .card-body{
+
+    padding:0 0 18px;
+
+    color:#555;
+
+    line-height:1.9;
+
+}
+
+
+
+/*====================================================
+    SECTION 06
+    CTA
+====================================================*/
+
+.school-cta-section{
+
+    padding:60px 0 70px;
+
+    background:#ffffff;
+
+}
+
+.cta-box{
+
+    background:#123E73;
+
+    border-radius:18px;
+
+    padding:60px 45px;
+
+    text-align:center;
+
+}
+
+.cta-box h2{
+
+    color:#F47C20;
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.cta-box p{
+
+    color:#ffffff;
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+    max-width:760px;
+
+    margin:0 auto 35px;
+
+}
+
+
+/*====================================================
+    CTA BUTTONS
+====================================================*/
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.cta-buttons .btn{
+
+    min-width:220px;
+
+    padding:13px 24px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+}
+
+
+/* Download */
+
+.cta-buttons .btn-primary{
+
+    background:#ffffff;
+
+    border:2px solid #ffffff;
+
+    color:#123E73;
+
+}
+
+.cta-buttons .btn-primary:hover{
+
+    background:#F3F5F8;
+
+    color:#123E73;
+
+}
+
+
+/* Enquire */
+
+.cta-buttons .btn-outline-primary{
+
+    background:transparent;
+
+    border:2px solid #ffffff;
+
+    color:#ffffff;
+
+}
+
+.cta-buttons .btn-outline-primary:hover{
+
+    background:#ffffff;
+
+    color:#123E73;
+
+}
+
+
+/*====================================================
+    DROPDOWN
+====================================================*/
+
+.cta-buttons .dropdown-menu{
+
+    border:none;
+
+    border-radius:10px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+
+    padding:8px 0;
+
+}
+
+.cta-buttons .dropdown-item{
+
+    font-size:.93rem;
+
+    padding:10px 18px;
+
+    color:#333;
+
+}
+
+.cta-buttons .dropdown-item:hover{
+
+    background:#FFF3E8;
+
+    color:#123E73;
+
+}
+
+
+/*====================================================
+    SECTION 07
+    RESPONSIVE
+====================================================*/
+
+/*==========================================
+    LARGE DEVICES
+==========================================*/
+
+@media (max-width:1199px){
+
+    .hero-content h1{
+        font-size:2.7rem;
+    }
+
+    .hero-image img{
+        max-width:560px;
+    }
+
+    .programme-card{
+        padding:22px;
+    }
+
+    .programme-icon img{
+        height:190px;
+    }
+
+    .why-card{
+        padding:15px;
+    }
+
+}
+
+
+/*==========================================
+    TABLET
+==========================================*/
+
+@media (max-width:991px){
+
+    section{
+        padding-top:50px !important;
+        padding-bottom:50px !important;
+    }
+
+    /*-------------------------
+        HERO
+    --------------------------*/
+
+    .pdp-hero{
+
+        text-align:center;
+
+    }
+
+    .hero-content{
+
+        padding-right:0;
+
+        margin-bottom:40px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:2.45rem;
+
+    }
+
+    .hero-divider{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+    .hero-content p{
+
+        max-width:100%;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .hero-image{
+
+        text-align:center;
+
+    }
+
+    .hero-image img{
+
+        margin:auto;
+
+        max-width:520px;
+
+    }
+
+
+    /*-------------------------
+        PROGRAMMES
+    --------------------------*/
+
+    .professional-programmes .row>div{
+
+        margin-bottom:28px;
+
+    }
+
+
+    /*-------------------------
+        CUSTOM TRAINING
+    --------------------------*/
+
+    .custom-training-box{
+
+        padding:35px 28px;
+
+        text-align:center;
+
+    }
+
+    .custom-training-image{
+
+        margin-bottom:25px;
+
+    }
+
+    .custom-training-content h2{
+
+        font-size:1.75rem;
+
+    }
+
+    .custom-training-content .btn{
+
+        margin-top:18px;
+
+        max-width:260px;
+
+        width:100%;
+
+    }
+
+
+    /*-------------------------
+        WHY RHSA
+    --------------------------*/
+
+    .why-rhsa .row{
+
+        flex-wrap:wrap;
+
+    }
+
+    .why-rhsa .col-lg{
+
+        flex:0 0 33.333%;
+
+        max-width:33.333%;
+
+        margin-bottom:35px;
+
+    }
+
+    .why-card::after{
+
+        display:none;
+
+    }
+
+}
+
+
+/*==========================================
+    MOBILE
+==========================================*/
+
+@media (max-width:767px){
+
+    section{
+
+        padding-top:45px !important;
+
+        padding-bottom:45px !important;
+
+    }
+
+    .section-title{
+
+        margin-bottom:35px;
+
+    }
+
+    .section-title h2{
+
+        font-size:1.9rem;
+
+    }
+
+
+    /*-------------------------
+        HERO
+    --------------------------*/
+
+    .pdp-hero{
+
+        padding-top:40px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:2rem;
+
+        line-height:1.25;
+
+    }
+
+    .hero-content p{
+
+        font-size:1rem;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .hero-buttons .btn{
+
+        width:100%;
+
+        max-width:300px;
+
+    }
+
+    .hero-image img{
+
+        max-width:100%;
+
+    }
+
+
+    /*-------------------------
+        PROGRAMMES
+    --------------------------*/
+
+    .programme-card{
+
+        padding:20px;
+
+    }
+
+    .programme-icon img{
+
+        height:220px;
+
+    }
+
+    .programme-card h3{
+
+        font-size:1.25rem;
+
+    }
+
+    .programme-info{
+
+        flex-direction:column;
+
+        gap:8px;
+
+    }
+
+    .programme-btn{
+
+        width:100%;
+
+    }
+
+
+    /*-------------------------
+        CUSTOM TRAINING
+    --------------------------*/
+
+    .custom-training-box{
+
+        padding:28px 20px;
+
+    }
+
+    .custom-training-image img{
+
+        width:90px;
+
+    }
+
+    .custom-training-content h2{
+
+        font-size:1.55rem;
+
+    }
+
+    .custom-training-content .btn{
+
+        width:100%;
+
+        max-width:100%;
+
+    }
+
+
+    /*-------------------------
+        WHY RHSA
+    --------------------------*/
+
+    .why-rhsa .col-lg{
+
+        flex:0 0 100%;
+
+        max-width:100%;
+
+    }
+
+    .why-card{
+
+        padding:20px 10px;
+
+    }
+
+    .why-icon{
+
+        width:74px;
+
+        height:74px;
+
+    }
+
+    .why-icon i{
+
+        font-size:30px;
+
+    }
+
+
+    /*-------------------------
+        FAQ
+    --------------------------*/
+
+    .faq-section .btn-link{
+
+        padding-right:30px;
+
+        font-size:.95rem;
+
+    }
+
+    .faq-section .card-body{
+
+        font-size:.93rem;
+
+    }
+
+
+    /*-------------------------
+        CTA
+    --------------------------*/
+
+    .cta-box{
+
+        padding:35px 22px;
+
+    }
+
+    .cta-box h2{
+
+        font-size:1.8rem;
+
+        line-height:1.3;
+
+    }
+
+    .cta-box p{
+
+        font-size:.96rem;
+
+    }
+
+    .cta-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .cta-buttons .btn{
+
+        width:100%;
+
+        max-width:300px;
+
+    }
+
+    .dropdown-menu{
+
+        width:100%;
+
+    }
+
+}

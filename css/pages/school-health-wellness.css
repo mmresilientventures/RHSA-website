@@ -1,0 +1,375 @@
+
+/* RHSA Unified Card System */
+
+.school-importance-section,
+.curriculum-section,
+.implementation-section,
+.recognition-section,
+.domain-experts-section{padding:45px 0;}
+
+.importance-card,.module-card,.implementation-card,.recognition-card,.expert-card{
+background:#fff;border:1px solid #e8edf3;border-radius:18px;padding:25px;text-align:center;
+height:100%;transition:.3s;box-shadow:0 4px 18px rgba(0,0,0,.05);
+}
+.importance-card:hover,.module-card:hover,.implementation-card:hover,.recognition-card:hover,.expert-card:hover{
+transform:translateY(-6px);box-shadow:0 12px 28px rgba(0,0,0,.12);
+}
+.importance-card img,.module-card img,.implementation-card img,.recognition-card img,.expert-card img{
+width:110px;height:110px;object-fit:cover;border-radius:50%;display:block;margin:0 auto 14px;
+}
+.recognition-card img{object-fit:contain;padding:6px;}
+.importance-card h4,.module-card h4,.implementation-card h4,.recognition-card h4{
+font-size:1.35rem;font-weight:600;line-height:1.25;margin-bottom:12px;color:#183b6b;
+}
+.expert-card h5{
+font-size:1.25rem;font-weight:600;line-height:1.25;margin-top:10px;color:#183b6b;
+}
+.importance-card p,.module-card p,.implementation-card p,.recognition-card p{
+font-size:.95rem;line-height:1.6;color:#555;margin-bottom:0;
+}
+.section-title{margin-bottom:25px;}
+.row>[class*=col-]{margin-bottom:24px;}
+@media(max-width:991px){
+.importance-card img,.module-card img,.implementation-card img,.recognition-card img,.expert-card img{width:95px;height:95px;}
+.importance-card h4,.module-card h4,.implementation-card h4,.recognition-card h4,.expert-card h5{font-size:1.1rem;}
+}
+@media(max-width:576px){
+.school-importance-section,.curriculum-section,.implementation-section,.recognition-section,.domain-experts-section{padding:55px 0;}
+.importance-card,.module-card,.implementation-card,.recognition-card,.expert-card{padding:20px;}
+.importance-card img,.module-card img,.implementation-card img,.recognition-card img,.expert-card img{width:82px;height:82px;}
+}
+
+
+
+
+
+
+
+
+/*====================================================
+        SECTION 7 - WHY RHSA
+====================================================*/
+
+.why-rhsa-section{
+    padding:45px 0;
+    background:#ffffff;
+}
+
+.why-subtitle{
+    margin-top:18px;
+    font-size:18px;
+    color:#6b7280;
+    font-weight:400;
+    max-width:650px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.7;
+}
+
+.why-feature{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    margin-bottom:25px;
+
+}
+
+.why-dot{
+
+    width:16px;
+
+    height:16px;
+
+    background:#f59e0b;
+
+    border-radius:50%;
+
+    flex-shrink:0;
+
+    margin-top:10px;
+
+    margin-right:18px;
+
+}
+
+.why-content{
+
+    flex:1;
+
+}
+
+.why-content h4{
+
+    font-size:24px;
+
+    color:#173F73;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+    line-height:1.3;
+
+}
+
+.why-content p{
+
+    font-size:16px;
+
+    color:#666666;
+
+    line-height:1.8;
+
+    margin:0;
+
+}
+
+/* Space between columns */
+
+@media(min-width:992px){
+
+    .col-lg-6:first-child{
+
+        padding-right:40px;
+
+    }
+
+    .col-lg-6:last-child{
+
+        padding-left:40px;
+
+    }
+
+}
+
+/* Tablet */
+
+@media(max-width:991px){
+
+    .why-rhsa-section{
+
+        padding:70px 0;
+
+    }
+
+    .why-feature{
+
+        margin-bottom:25px;
+
+    }
+
+    .why-content h4{
+
+        font-size:21px;
+
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:767px){
+
+    .why-subtitle{
+
+        font-size:16px;
+
+    }
+
+    .why-content h4{
+
+        font-size:20px;
+
+    }
+
+    .why-content p{
+
+        font-size:15px;
+
+    }
+
+    .why-dot{
+
+        width:14px;
+
+        height:14px;
+
+        margin-top:8px;
+
+        margin-right:14px;
+
+    }
+
+}
+
+/*====================================================
+        SECTION 7 - WHY RHSA
+====================================================*/
+
+.why-rhsa-section{
+    padding:45px 0;
+    background:#ffffff;
+}
+
+.why-subtitle{
+    font-size:20px;
+    color:#6b7280;
+    margin-top:15px;
+    margin-bottom:25px;
+    font-weight:500;
+}
+
+/* Feature Card */
+
+.why-feature{
+
+    display:flex;
+    align-items:flex-start;
+
+    padding:18px 20px;
+
+    border-radius:18px;
+
+    margin-bottom:25px;
+
+    transition:all .3s ease;
+
+}
+
+/* LEFT COLUMN */
+
+.blue-card{
+
+    background:#F3F8FF;
+
+    border-left:5px solid #1E4D8C;
+
+}
+
+/* RIGHT COLUMN */
+
+.orange-card{
+
+    background:#FFF6EA;
+
+    border-left:5px solid #F59E0B;
+
+}
+
+/* Hover */
+
+.why-feature:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+
+}
+
+/* Icon */
+
+.why-icon{
+
+    width:55px;
+
+    height:55px;
+
+    min-width:55px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#ffffff;
+
+    margin-right:20px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+}
+
+.blue-card .why-icon{
+
+    color:#1E4D8C;
+
+}
+
+.orange-card .why-icon{
+
+    color:#F59E0B;
+
+}
+
+/* Font Awesome */
+
+.why-icon i{
+
+    font-size:24px;
+
+}
+
+/* Heading */
+
+.why-content h4{
+
+    font-size:18px;
+
+    color:#173F73;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+/* Description */
+
+.why-content p{
+
+    font-size:17px;
+
+    color:#5E6B7A;
+
+    line-height:1.8;
+
+    margin-bottom:0;
+
+}
+
+/* Mobile */
+
+@media(max-width:991px){
+
+    .why-feature{
+
+        padding:18px;
+
+    }
+
+    .why-content h4{
+
+        font-size:20px;
+
+    }
+
+}
+
+/* Programme Levels */
+
+.levels-section{
+
+    padding:45px 0;
+
+}
+
+.levels-section{
+
+    padding:30px 0 !important;
+
+}

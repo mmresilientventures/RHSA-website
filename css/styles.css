@@ -1,0 +1,2578 @@
+/*==========================================================
+01. ROOT VARIABLES
+==========================================================*/
+
+:root{
+
+    /*------------------------------------------------------
+    Brand Colours
+    ------------------------------------------------------*/
+
+    --primary:#0F386E;
+    --secondary:#E19A32;
+
+    --white:#FFFFFF;
+    --light:#F7F9FC;
+    --dark:#1D1D1D;
+    --grey:#6B7280;
+
+    /*------------------------------------------------------
+    Typography
+    ------------------------------------------------------*/
+
+    --font-family:'Montserrat',sans-serif;
+
+    --h1:58px;
+    --h2:42px;
+    --h3:26px;
+    --h4:22px;
+
+    --body-lg:20px;
+    --body:17px;
+    --body-sm:15px;
+
+    /*------------------------------------------------------
+    Border Radius
+    ------------------------------------------------------*/
+
+    --radius-sm:12px;
+    --radius:18px;
+    --radius-lg:24px;
+    --radius-pill:50px;
+
+    /*------------------------------------------------------
+    Shadows
+    ------------------------------------------------------*/
+
+    --shadow-sm:0 8px 24px rgba(0,0,0,.08);
+
+    --shadow:
+    0 12px 32px rgba(0,0,0,.10);
+
+    --shadow-lg:
+    0 20px 45px rgba(0,0,0,.15);
+
+    /*------------------------------------------------------
+    Transitions
+    ------------------------------------------------------*/
+
+    --transition:.35s ease;
+
+    /*------------------------------------------------------
+    Section Spacing
+    ------------------------------------------------------*/
+
+    --section-space:60px;
+
+    --section-gap:30px;
+
+}
+
+/*==========================================================
+02. RESET
+==========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:var(--font-family);
+    font-size:var(--body);
+    font-weight:400;
+    line-height:1.7;
+    color:var(--dark);
+    background:var(--white);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+}
+
+img{
+    display:block;
+    max-width:100%;
+    height:auto;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+    transition:var(--transition);
+}
+
+ul,
+ol{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+button,
+input,
+textarea,
+select{
+    font:inherit;
+}
+
+button{
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+:focus{
+    outline:none;
+}
+
+::selection{
+    background:var(--secondary);
+    color:var(--white);
+}
+
+/*==========================================================
+03. TYPOGRAPHY
+==========================================================*/
+
+/*----------------------------------------------------------
+Headings
+----------------------------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin:0;
+    font-weight:600;
+    line-height:1.3;
+    color:var(--primary);
+}
+
+h1{
+    font-size:var(--h1);
+    font-weight:700;
+}
+
+h2{
+    font-size:var(--h2);
+}
+
+h3{
+    font-size:var(--h3);
+}
+
+h4{
+    font-size:var(--h4);
+}
+
+/*----------------------------------------------------------
+Paragraph
+----------------------------------------------------------*/
+
+p{
+    margin:0;
+    font-size:var(--body);
+    line-height:1.8;
+    color:var(--grey);
+}
+
+/*----------------------------------------------------------
+Section Header
+----------------------------------------------------------*/
+
+.section-header{
+    text-align:center;
+    max-width:820px;
+    margin:0 auto 50px;
+}
+
+.section-label{
+    display:inline-block;
+    margin-bottom:12px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--secondary);
+}
+
+.section-title{
+    margin-bottom:18px;
+}
+
+.section-subtitle{
+    font-size:18px;
+    line-height:1.8;
+    color:var(--grey);
+}
+
+/*----------------------------------------------------------
+Divider
+----------------------------------------------------------*/
+
+.section-divider,
+.card-divider{
+    width:70px;
+    height:4px;
+    margin:20px auto 25px;
+    border-radius:10px;
+    background:var(--secondary);
+}
+
+/* Left-aligned divider */
+
+.card-divider{
+    margin:18px 0 22px;
+}
+
+/*==========================================================
+04. LAYOUT
+==========================================================*/
+
+/*----------------------------------------------------------
+Container
+----------------------------------------------------------*/
+
+.container{
+    width:100%;
+    max-width:1320px;
+    margin:0 auto;
+    padding:0 15px;
+}
+
+/*----------------------------------------------------------
+Sections
+----------------------------------------------------------*/
+
+section{
+    padding:var(--section-space) 0;
+    position:relative;
+}
+
+.section-sm{
+    padding:60px 0;
+}
+
+.section-lg{
+    padding:120px 0;
+}
+
+/*----------------------------------------------------------
+Background Utilities
+----------------------------------------------------------*/
+
+.bg-white{
+    background:var(--white);
+}
+
+.bg-light{
+    background:var(--light);
+}
+
+.bg-primary{
+    background:var(--primary);
+    color:var(--white);
+}
+
+/*----------------------------------------------------------
+Content Width
+----------------------------------------------------------*/
+
+.content-width{
+    max-width:760px;
+}
+
+.content-width-lg{
+    max-width:900px;
+}
+
+.content-center{
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+
+/*----------------------------------------------------------
+Spacing Utilities
+----------------------------------------------------------*/
+
+.mb-20{
+    margin-bottom:20px;
+}
+
+.mb-30{
+    margin-bottom:30px;
+}
+
+.mb-40{
+    margin-bottom:40px;
+}
+
+.mb-50{
+    margin-bottom:50px;
+}
+
+.mb-60{
+    margin-bottom:60px;
+}
+
+.mt-20{
+    margin-top:20px;
+}
+
+.mt-30{
+    margin-top:30px;
+}
+
+.mt-40{
+    margin-top:40px;
+}
+
+.mt-50{
+    margin-top:50px;
+}
+
+/*----------------------------------------------------------
+Image Utilities
+----------------------------------------------------------*/
+
+.img-rounded{
+    border-radius:var(--radius);
+}
+
+.img-shadow{
+    box-shadow:var(--shadow-lg);
+}
+
+/*==========================================================
+05. BUTTON SYSTEM
+==========================================================*/
+
+/*----------------------------------------------------------
+Base Button
+----------------------------------------------------------*/
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:15px 34px;
+
+    font-size:16px;
+    font-weight:600;
+
+    border-radius:var(--radius-pill);
+
+    transition:var(--transition);
+
+    text-decoration:none;
+
+    cursor:pointer;
+}
+
+/*----------------------------------------------------------
+Primary Button
+----------------------------------------------------------*/
+
+.btn-primary,
+.btn-warning{
+
+    background:var(--secondary);
+
+    color:var(--white);
+
+    border:2px solid var(--secondary);
+
+}
+
+.btn-primary:hover,
+.btn-warning:hover{
+
+    background:#C98219;
+
+    border-color:#C98219;
+
+    color:var(--white);
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow);
+
+}
+
+/*----------------------------------------------------------
+Outline Light Button
+----------------------------------------------------------*/
+
+.btn-outline-light{
+
+    background:transparent;
+
+    color:var(--white);
+
+    border:2px solid var(--white);
+
+}
+
+.btn-outline-light:hover{
+
+    background:var(--white);
+
+    color:var(--primary);
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow);
+
+}
+
+/*----------------------------------------------------------
+Outline Primary Button
+----------------------------------------------------------*/
+
+.btn-outline-primary{
+
+    background:transparent;
+
+    color:var(--primary);
+
+    border:2px solid var(--primary);
+
+}
+
+.btn-outline-primary:hover{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    transform:translateY(-3px);
+
+}
+
+/*----------------------------------------------------------
+Button Sizes
+----------------------------------------------------------*/
+
+.btn-sm{
+
+    padding:10px 22px;
+
+    font-size:14px;
+
+}
+
+.btn-lg{
+
+    padding:16px 38px;
+
+    font-size:17px;
+
+}
+
+/*----------------------------------------------------------
+Button Group
+----------------------------------------------------------*/
+
+.hero-buttons,
+.button-group{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:16px;
+
+    margin-top:30px;
+
+}
+
+/*==========================================================
+06. NAVBAR
+==========================================================*/
+
+/*----------------------------------------------------------
+Navigation Bar
+----------------------------------------------------------*/
+
+.rhsa-navbar{
+
+    background:var(--white);
+
+    padding:14px 0;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:var(--transition);
+
+    z-index:999;
+}
+
+/*----------------------------------------------------------
+Brand
+----------------------------------------------------------*/
+
+.parent-brand{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:var(--primary)!important;
+
+    transition:var(--transition);
+
+}
+
+.parent-brand:hover{
+
+    color:var(--secondary)!important;
+
+}
+
+/*----------------------------------------------------------
+Navigation Links
+----------------------------------------------------------*/
+
+.navbar-nav{
+
+    align-items:center;
+
+}
+
+.navbar-nav .nav-item{
+
+    margin-left:6px;
+
+}
+
+.navbar-nav .nav-link{
+
+    padding:10px 16px !important;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:var(--dark)!important;
+
+    border-radius:var(--radius-sm);
+
+    transition:var(--transition);
+
+}
+
+.navbar-nav .nav-link:hover,
+
+.navbar-nav .nav-link.active{
+
+    color:var(--secondary)!important;
+
+}
+
+/*----------------------------------------------------------
+Dropdown
+----------------------------------------------------------*/
+
+.dropdown-menu{
+
+    border:none;
+
+    border-radius:var(--radius);
+
+    padding:12px;
+
+    min-width:260px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.dropdown-item{
+
+    padding:12px 18px;
+
+    font-size:15px;
+
+    border-radius:10px;
+
+    transition:var(--transition);
+
+}
+
+.dropdown-item:hover{
+
+    background:var(--light);
+
+    color:var(--secondary);
+
+}
+
+.dropdown-divider{
+
+    margin:8px 0;
+
+}
+
+/*----------------------------------------------------------
+Mobile Toggle
+----------------------------------------------------------*/
+
+.navbar-toggler{
+
+    border:none;
+
+    box-shadow:none;
+
+}
+
+.navbar-toggler:focus{
+
+    box-shadow:none;
+
+}
+
+/*==========================================================
+07. HERO SYSTEM
+==========================================================*/
+
+/*----------------------------------------------------------
+Home Hero
+----------------------------------------------------------*/
+
+.hero-section{
+
+    position:relative;
+
+    padding:130px 0 110px;
+
+    background:
+    linear-gradient(
+    rgba(15,56,110,.95),
+    rgba(21,86,149,.95)),
+    url("../images/header-background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:var(--white);
+
+    overflow:hidden;
+}
+
+/*----------------------------------------------------------
+Inner Page Hero
+----------------------------------------------------------*/
+
+.page-hero{
+
+    position:relative;
+
+    padding:130px 0 110px;
+
+    background:
+    linear-gradient(
+    rgba(15,56,110,.95),
+    rgba(21,86,149,.95)),
+    url("../images/header-background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:var(--white);
+
+    overflow:hidden;
+}
+
+/*----------------------------------------------------------
+Hero Content
+----------------------------------------------------------*/
+
+.hero-content{
+
+    max-width:680px;
+
+}
+
+.hero-content h1{
+
+    font-size:var(--h1);
+
+    font-weight:700;
+
+    color:var(--white);
+
+    margin-bottom:20px;
+
+    line-height:1.15;
+
+}
+
+.hero-content h2{
+
+    font-size:24px;
+
+    font-weight:600;
+
+    color:#FFD98A;
+
+    margin-bottom:24px;
+
+    line-height:1.4;
+
+}
+
+.hero-content p{
+
+    font-size:20px;
+
+    color:rgba(255,255,255,.92);
+
+    line-height:1.8;
+
+    margin-bottom:32px;
+
+    max-width:650px;
+
+}
+
+/*----------------------------------------------------------
+Hero Image
+----------------------------------------------------------*/
+
+.hero-image{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:500px;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/*----------------------------------------------------------
+Hero Buttons
+----------------------------------------------------------*/
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:16px;
+
+}
+
+/*----------------------------------------------------------
+Hero Alignment
+----------------------------------------------------------*/
+
+.hero-section .row,
+.page-hero .row{
+
+    align-items:center;
+
+    min-height:480px;
+
+}
+
+/*==========================================================
+08. CARD SYSTEM
+==========================================================*/
+
+/*----------------------------------------------------------
+Base Card
+----------------------------------------------------------*/
+
+.card{
+
+    position:relative;
+
+    height:100%;
+
+    background:var(--white);
+
+    border:none;
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/*----------------------------------------------------------
+Card Body
+----------------------------------------------------------*/
+
+.card-body{
+
+    padding:32px;
+
+}
+
+/*----------------------------------------------------------
+Card Title
+----------------------------------------------------------*/
+
+.card-title{
+
+    margin-bottom:18px;
+
+    font-size:var(--h3);
+
+    font-weight:600;
+
+    color:var(--primary);
+
+    line-height:1.35;
+
+}
+
+/*----------------------------------------------------------
+Card Text
+----------------------------------------------------------*/
+
+.card-text{
+
+    font-size:var(--body);
+
+    color:var(--grey);
+
+    line-height:1.8;
+
+}
+
+/*----------------------------------------------------------
+Card Divider
+----------------------------------------------------------*/
+
+.card-divider{
+
+    width:65px;
+
+    height:4px;
+
+    background:var(--secondary);
+
+    border-radius:20px;
+
+    margin:18px 0 24px;
+
+}
+
+/*----------------------------------------------------------
+Card Footer
+----------------------------------------------------------*/
+
+.card-footer{
+
+    background:transparent;
+
+    border:none;
+
+    padding:0 32px 32px;
+
+}
+
+/*----------------------------------------------------------
+Card Image
+----------------------------------------------------------*/
+
+.card img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+/*----------------------------------------------------------
+Equal Height Grid
+----------------------------------------------------------*/
+
+.card-grid{
+
+    display:grid;
+
+    gap:30px;
+
+}
+
+.card-grid-2{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.card-grid-3{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+.card-grid-4{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+
+/*----------------------------------------------------------
+Commitment Grid
+----------------------------------------------------------*/
+
+.commitment-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:40px;
+
+    margin-top:50px;
+
+}
+
+.commitment-card{
+
+    background:var(--white);
+
+    padding:35px 30px;
+
+    border-radius:var(--radius);
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    height:100%;
+
+}
+
+.commitment-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.commitment-card h3{
+
+    margin:20px 0 15px;
+
+}
+
+.commitment-card p{
+
+    margin:0;
+
+}
+
+
+
+/*==========================================================
+09. ICON SYSTEM
+==========================================================*/
+
+/*----------------------------------------------------------
+Icon Wrapper
+----------------------------------------------------------*/
+
+.icon-wrapper{
+
+    width:100px;
+    height:100px;
+
+    margin:0 auto 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+/*----------------------------------------------------------
+Icon Image
+----------------------------------------------------------*/
+
+.icon-wrapper img{
+
+    width:90px;
+    height:90px;
+
+    object-fit:contain;
+
+    transition:var(--transition);
+
+}
+
+/*----------------------------------------------------------
+Card Hover Effect
+----------------------------------------------------------*/
+
+.card:hover .icon-wrapper img{
+
+    transform:scale(1.08);
+
+}
+
+/*----------------------------------------------------------
+Small Icons
+----------------------------------------------------------*/
+
+.icon-sm{
+
+    width:60px;
+    height:60px;
+
+}
+
+/*----------------------------------------------------------
+Medium Icons
+----------------------------------------------------------*/
+
+.icon-md{
+
+    width:90px;
+    height:90px;
+
+}
+
+/*----------------------------------------------------------
+Large Icons
+----------------------------------------------------------*/
+
+.icon-lg{
+
+    width:120px;
+    height:120px;
+
+}
+
+/*----------------------------------------------------------
+Commitment Icons
+----------------------------------------------------------*/
+
+.commitment-icon{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.commitment-icon img{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:contain;
+
+    transition:var(--transition);
+
+}
+
+.commitment-card:hover .commitment-icon img{
+
+    transform:scale(1.08);
+
+}
+
+
+/*==========================================================
+10. FORM SYSTEM
+==========================================================*/
+
+/*----------------------------------------------------------
+Form Group
+----------------------------------------------------------*/
+
+.form-group{
+
+    margin-bottom:20px;
+
+}
+
+/*----------------------------------------------------------
+Input Fields
+----------------------------------------------------------*/
+
+.form-control{
+
+    width:100%;
+
+    height:54px;
+
+    padding:0 18px;
+
+    border:1px solid #D8DDE5;
+
+    border-radius:var(--radius-sm);
+
+    font-size:16px;
+
+    transition:var(--transition);
+
+}
+
+textarea.form-control{
+
+    height:140px;
+
+    padding:18px;
+
+    resize:none;
+
+}
+
+/*----------------------------------------------------------
+Focus
+----------------------------------------------------------*/
+
+.form-control:focus{
+
+    border-color:var(--secondary);
+
+    box-shadow:none;
+
+}
+
+/*----------------------------------------------------------
+Placeholder
+----------------------------------------------------------*/
+
+::placeholder{
+
+    color:#999;
+
+}
+
+/*==========================================================
+11. FOOTER
+==========================================================*/
+
+.footer-section{
+
+    padding:60px 0 20px;
+
+    background:
+    linear-gradient(
+    rgba(15,56,110,.96),
+    rgba(15,56,110,.96)),
+    url("../images/header-background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:var(--white);
+
+}
+
+.footer-logo{
+
+    width:110px;
+
+    margin-bottom:15px;
+
+}
+
+.footer-section h4{
+
+    color:var(--white);
+
+    margin-bottom:18px;
+
+}
+
+.footer-section h5{
+
+    color:var(--white);
+
+    margin-bottom:20px;
+
+}
+
+.footer-section p{
+
+    color:#D8E0EA;
+
+}
+
+.footer-links li{
+
+    margin-bottom:10px;
+
+}
+
+.footer-links a{
+
+    color:#D8E0EA;
+
+    transition:var(--transition);
+
+}
+
+.footer-links a:hover{
+
+    color:var(--secondary);
+
+}
+
+.footer-social{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:18px;
+
+}
+
+.footer-social a{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    transition:var(--transition);
+
+}
+
+.footer-social a:hover{
+
+    background:var(--secondary);
+
+}
+
+.footer-section hr{
+
+    margin:35px 0 20px;
+
+    border-color:rgba(255,255,255,.15);
+
+}
+
+.copyright{
+
+    text-align:center;
+
+    color:#C9D2DD;
+
+}
+
+/*==========================================================
+12. RESPONSIVE
+==========================================================*/
+
+@media (max-width:991px){
+
+    h1{
+
+        font-size:44px;
+
+    }
+
+    h2{
+
+        font-size:34px;
+
+    }
+
+    .hero-section,
+    .page-hero{
+
+        text-align:center;
+
+        padding:110px 0 80px;
+
+    }
+
+    .hero-content{
+
+        margin:0 auto;
+
+    }
+
+    .hero-image{
+
+        margin-top:50px;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .card-grid-2,
+    .card-grid-3,
+    .card-grid-4{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:767px){
+
+    h1{
+
+        font-size:36px;
+
+    }
+
+    h2{
+
+        font-size:30px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    section{
+
+        padding:70px 0;
+
+    }
+
+}
+
+
+/*==========================================================
+13. TABLE SYSTEM
+==========================================================*/
+
+/*----------------------------------------------------------
+Responsive Table Wrapper
+----------------------------------------------------------*/
+
+.table-responsive{
+
+    width:100%;
+
+    overflow-x:auto;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-sm);
+
+    margin:30px 0;
+
+}
+
+/*----------------------------------------------------------
+Table
+----------------------------------------------------------*/
+
+.rhsa-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:var(--white);
+
+    min-width:700px;
+
+}
+
+/*----------------------------------------------------------
+Header
+----------------------------------------------------------*/
+
+.rhsa-table thead{
+
+    background:var(--primary);
+
+}
+
+.rhsa-table thead th{
+
+    padding:18px 20px;
+
+    color:var(--white);
+
+    font-size:16px;
+
+    font-weight:600;
+
+    text-align:left;
+
+    border:none;
+
+}
+
+/*----------------------------------------------------------
+Body
+----------------------------------------------------------*/
+
+.rhsa-table tbody td{
+
+    padding:18px 20px;
+
+    font-size:16px;
+
+    color:var(--dark);
+
+    border-bottom:1px solid #E8EDF3;
+
+    vertical-align:top;
+
+    line-height:1.7;
+
+}
+
+/*----------------------------------------------------------
+Alternate Rows
+----------------------------------------------------------*/
+
+.rhsa-table tbody tr:nth-child(even){
+
+    background:#FAFBFD;
+
+}
+
+/*----------------------------------------------------------
+Hover
+----------------------------------------------------------*/
+
+.rhsa-table tbody tr:hover{
+
+    background:#F3F8FD;
+
+}
+
+/*----------------------------------------------------------
+Last Row
+----------------------------------------------------------*/
+
+.rhsa-table tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+/*----------------------------------------------------------
+Caption
+----------------------------------------------------------*/
+
+.table-caption{
+
+    font-size:15px;
+
+    color:var(--grey);
+
+    margin-top:12px;
+
+    font-style:italic;
+
+}
+
+/*==========================================================
+14. CTA SYSTEM
+==========================================================*/
+
+.cta-section{
+
+    padding:90px 0;
+
+    background:
+    linear-gradient(
+    rgba(15,56,110,.96),
+    rgba(21,86,149,.96)),
+    url("../images/header-background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:var(--white);
+
+    text-align:center;
+
+}
+
+.cta-content{
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+.cta-content h2{
+
+    color:var(--white);
+
+    margin-bottom:20px;
+
+}
+
+.cta-content p{
+
+    color:rgba(255,255,255,.90);
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+}
+
+/*==========================================================
+15. ENQUIRY FORM
+==========================================================*/
+
+.enquiry-section{
+
+    background:var(--light);
+
+}
+
+.enquiry-card{
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    padding:40px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.enquiry-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.enquiry-card p{
+
+    margin-bottom:30px;
+
+}
+
+.enquiry-form .form-group{
+
+    margin-bottom:20px;
+
+}
+
+.enquiry-form .btn{
+
+    width:100%;
+
+}
+
+/*==========================================================
+16. REGISTRATION FORM
+==========================================================*/
+
+.registration-section{
+
+    background:var(--light);
+
+}
+
+.registration-card{
+
+    background:var(--white);
+
+    padding:45px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+.registration-card h2{
+
+    margin-bottom:18px;
+
+}
+
+.registration-card p{
+
+    margin-bottom:35px;
+
+}
+
+.registration-form .row{
+
+    margin-bottom:5px;
+
+}
+
+.registration-form .btn{
+
+    width:100%;
+
+    margin-top:15px;
+
+}
+
+/*==========================================================
+17. STATISTICS
+==========================================================*/
+
+.stats-section{
+
+    background:var(--light);
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.stat-card{
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.stat-number{
+
+    font-size:48px;
+
+    font-weight:700;
+
+    color:var(--secondary);
+
+    margin-bottom:10px;
+
+}
+
+.stat-title{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+/*==========================================================
+18. TIMELINE
+==========================================================*/
+
+.timeline{
+
+    position:relative;
+
+    margin-top:50px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:30px;
+
+    top:0;
+
+    bottom:0;
+
+    width:3px;
+
+    background:var(--secondary);
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    padding-left:90px;
+
+    margin-bottom:60px;
+
+}
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:18px;
+
+    top:6px;
+
+    width:26px;
+
+    height:26px;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    border:5px solid var(--white);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.timeline-year{
+
+    color:var(--secondary);
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+/*==========================================================
+19. FAQ
+==========================================================*/
+
+.faq-section{
+
+    background:var(--light);
+
+}
+
+.faq-item{
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    margin-bottom:20px;
+
+    box-shadow:var(--shadow-sm);
+
+    overflow:hidden;
+
+}
+
+.faq-question{
+
+    padding:22px 28px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+.faq-answer{
+
+    padding:0 28px 25px;
+
+}
+
+/*==========================================================
+20. GALLERY
+==========================================================*/
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.gallery-item{
+
+    overflow:hidden;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.gallery-item img{
+
+    width:100%;
+
+    transition:.5s;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/*==========================================================
+21. TESTIMONIALS
+==========================================================*/
+
+.testimonial-card{
+
+    background:var(--white);
+
+    padding:40px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+.testimonial-card p{
+
+    font-size:19px;
+
+    font-style:italic;
+
+    margin-bottom:25px;
+
+}
+
+.testimonial-name{
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+.testimonial-designation{
+
+    color:var(--grey);
+
+}
+
+/*==========================================================
+22. TEAM
+==========================================================*/
+
+.team-card{
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.team-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.team-card img{
+
+    width:100%;
+
+}
+
+.team-content{
+
+    padding:30px;
+
+}
+
+/*==========================================================
+ABOUT PAGE ONLY - EQUAL TEAM PHOTOS
+==========================================================*/
+
+.team-section .team-image{
+
+    height:360px;
+    overflow:hidden;
+
+}
+
+.team-section .team-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center top;
+
+    display:block;
+
+}
+
+/*==========================================================
+23. PROGRAMME CARDS
+==========================================================*/
+
+.programme-card{
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    height:100%;
+
+}
+
+.programme-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.programme-content{
+
+    padding:30px;
+
+}
+
+/*==========================================================
+24. BADGES
+==========================================================*/
+
+.badge-rhsa{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:var(--secondary);
+
+    color:var(--white);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+/*==========================================================
+25. UTILITIES
+==========================================================*/
+
+.text-center{text-align:center;}
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+
+.bg-primary{background:var(--primary);}
+.bg-light{background:var(--light);}
+.bg-white{background:var(--white);}
+
+.rounded{border-radius:var(--radius);}
+.shadow{box-shadow:var(--shadow);}
+.shadow-lg{box-shadow:var(--shadow-lg);}
+
+.w-100{width:100%;}
+
+.d-flex{display:flex;}
+.align-center{align-items:center;}
+.justify-center{justify-content:center;}
+
+.mt-20{margin-top:20px;}
+.mt-40{margin-top:40px;}
+.mt-60{margin-top:60px;}
+
+.mb-20{margin-bottom:20px;}
+.mb-40{margin-bottom:40px;}
+.mb-60{margin-bottom:60px;}
+
+/*==========================================================
+26. PRINT
+==========================================================*/
+
+@media print{
+
+    body{
+
+        background:#fff;
+
+        color:#000;
+
+    }
+
+    .navbar,
+    .footer-section,
+    .btn,
+    .hero-buttons{
+
+        display:none !important;
+
+    }
+
+    section{
+
+        padding:20px 0;
+
+    }
+
+}
+
+
+/*==========================================================
+PROGRAMMES HERO
+==========================================================*/
+
+.programmes-hero{
+
+    padding:45px 0 35px;
+
+}
+
+.programmes-hero .hero-content{
+
+    padding-right:20px;
+
+}
+
+.programmes-hero .section-label{
+
+    font-size:.90rem;
+    letter-spacing:2px;
+    margin-bottom:12px;
+
+}
+
+.programmes-hero h1{
+
+    font-size:3.3rem;          /* WAS 4rem */
+    line-height:1.05;
+    margin-bottom:16px;
+
+}
+
+.programmes-hero h2{
+
+    font-size:1.55rem;         /* WAS 2rem */
+    line-height:1.35;
+    margin-bottom:18px;
+
+}
+
+.programmes-hero p{
+
+    font-size:1.05rem;         /* WAS 1.2rem */
+    line-height:1.7;
+    max-width:480px;
+
+}
+
+.programmes-hero .hero-image img{
+
+    max-width:640px;
+
+}
+
+/*==========================================================
+ENTRY LEVEL HERO OVERRIDES
+==========================================================*/
+
+.entry-hero{
+
+    padding:40px 0 30px !important;
+    min-height:auto;
+
+}
+
+.entry-hero .container{
+
+    padding-top:0;
+    padding-bottom:0;
+
+}
+
+.entry-hero .row{
+
+    min-height:auto;
+    align-items:center;
+
+}
+
+/* ==========================================================
+   WHY RHSA PAGE — PAGE-SPECIFIC SPACING FIX
+   ========================================================== */
+
+/* Keep the fixed navbar from covering the beginning of the page */
+.why-rhsa-hero-section{
+    padding-top:125px !important;
+    padding-bottom:55px !important;
+}
+
+/* Reduce excessive vertical space between Why RHSA sections */
+.rhsa-difference-section,
+.why-rhsa-section,
+.who-we-serve-section,
+.impact-section{
+    padding-top:55px !important;
+    padding-bottom:55px !important;
+}
+
+/* Keep the section headings compact */
+.why-rhsa-section .section-title,
+.who-we-serve-section .section-title,
+.rhsa-difference-section .section-title,
+.impact-section .section-title{
+    margin-bottom:30px !important;
+}
+
+/* Prevent unnecessary extra spacing inside the content */
+.why-rhsa-section .why-content,
+.who-we-serve-section .serve-content,
+.rhsa-difference-section .difference-content,
+.impact-section .impact-content{
+    margin-top:0 !important;
+}
+
+/* Keep paragraphs from creating artificial gaps */
+.why-rhsa-section p,
+.who-we-serve-section p,
+.rhsa-difference-section p,
+.impact-section p{
+    margin-bottom:14px;
+}
+
+.why-rhsa-section p:last-child,
+.who-we-serve-section p:last-child,
+.rhsa-difference-section p:last-child,
+.impact-section p:last-child{
+    margin-bottom:0;
+}
+/* ==========================================================
+   WHY RHSA — HERO
+========================================================== */
+
+.why-rhsa-hero-section .hero-content{
+    text-align:center;
+}
+
+.why-rhsa-icon{
+    width:82px;
+    height:82px;
+    margin:0 auto 18px;
+}
+
+.why-rhsa-icon img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+}
+
+.why-rhsa-hero-section .section-subtitle{
+    display:block;
+    color:#0b315f;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:8px;
+}
+
+.why-rhsa-hero-section h1{
+    color:#082f63;
+    font-size:48px;
+    font-weight:800;
+    line-height:1.15;
+    margin:0 0 14px;
+}
+
+.why-rhsa-hero-section .hero-line{
+    margin:0 auto 16px;
+}
+
+/* ==========================================================
+   WHY RHSA HERO
+   Navy textured RHSA treatment
+========================================================== */
+
+.why-rhsa-hero-section{
+    padding:90px 0 55px !important;
+
+    background:
+        linear-gradient(
+            rgba(8,47,99,.96),
+            rgba(15,56,110,.96)
+        ),
+        url("../images/header-background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:#ffffff;
+}
+
+
+/* LEFT CONTENT */
+
+.why-rhsa-hero-section .hero-content{
+    text-align:left;
+    padding-right:40px;
+}
+
+.why-rhsa-hero-section .section-subtitle{
+    display:block;
+
+    color:#f3a32b;
+
+    font-size:15px;
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
+}
+
+.why-rhsa-hero-section h1{
+    color:#ffffff;
+
+    font-size:52px;
+    font-weight:800;
+
+    line-height:1.15;
+
+    margin:0 0 14px;
+}
+
+.why-rhsa-hero-section .hero-line{
+    margin:0 0 16px;
+}
+
+.why-rhsa-hero-section .hero-content p{
+    color:rgba(255,255,255,.92);
+
+    font-size:20px;
+    line-height:1.6;
+
+    margin:0;
+}
+
+
+/* RIGHT ICON */
+
+.why-rhsa-hero-icon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.why-rhsa-hero-icon img{
+    width:230px;
+    height:230px;
+
+    object-fit:contain;
+
+    display:block;
+
+    /*
+      The supplied icon has a white background,
+      so it remains visually clean against the navy hero.
+    */
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:991px){
+
+    .why-rhsa-hero-section{
+        padding:80px 0 45px !important;
+    }
+
+    .why-rhsa-hero-section .hero-content{
+        text-align:center;
+        padding-right:0;
+        margin-bottom:30px;
+    }
+
+    .why-rhsa-hero-section .hero-line{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .why-rhsa-hero-icon img{
+        width:180px;
+        height:180px;
+    }
+
+}
+/* ==========================================================
+   WHY RHSA HERO — TWO COLUMN ALIGNMENT
+========================================================== */
+
+.why-rhsa-hero-section .row{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.why-rhsa-hero-section .col-lg-7{
+    flex:0 0 58.333333%;
+    max-width:58.333333%;
+}
+
+.why-rhsa-hero-section .col-lg-5{
+    flex:0 0 41.666667%;
+    max-width:41.666667%;
+}
+
+.why-rhsa-hero-icon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.why-rhsa-hero-icon img{
+    width:230px;
+    height:230px;
+    object-fit:contain;
+    display:block;
+}
+
+
+/* MOBILE */
+
+@media (max-width:991px){
+
+    .why-rhsa-hero-section .col-lg-7,
+    .why-rhsa-hero-section .col-lg-5{
+        flex:0 0 100%;
+        max-width:100%;
+    }
+
+    .why-rhsa-hero-icon{
+        margin-top:30px;
+    }
+
+}
+
+/* ==========================================================
+   VISION, MISSION & VALUES — HERO
+========================================================== */
+
+.vision-hero-section{
+    padding:90px 0 55px !important;
+
+    background:
+        linear-gradient(
+            rgba(8,47,99,.96),
+            rgba(15,56,110,.96)
+        ),
+        url("../images/header-background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:#ffffff;
+}
+
+.vision-hero-section .hero-content{
+    text-align:left;
+    padding-right:40px;
+}
+
+.vision-hero-section .section-subtitle{
+    display:block;
+    color:#f3a32b;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.vision-hero-section h1{
+    color:#ffffff;
+    font-size:52px;
+    font-weight:800;
+    line-height:1.15;
+    margin:0 0 14px;
+}
+
+.vision-hero-section .hero-line{
+    margin:0 0 16px;
+}
+
+.vision-hero-section .hero-content p{
+    color:rgba(255,255,255,.92);
+    font-size:20px;
+    line-height:1.6;
+    margin:0;
+}
+
+.vision-hero-icon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.vision-hero-icon img{
+    width:230px;
+    height:230px;
+    object-fit:contain;
+    display:block;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:991px){
+
+    .vision-hero-section{
+        padding:80px 0 45px !important;
+    }
+
+    .vision-hero-section .hero-content{
+        text-align:center;
+        padding-right:0;
+        margin-bottom:30px;
+    }
+
+    .vision-hero-section .hero-line{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .vision-hero-icon img{
+        width:180px;
+        height:180px;
+    }
+
+}
