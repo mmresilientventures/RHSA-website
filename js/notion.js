@@ -57,6 +57,18 @@
 
     function renderFeatured(article) {
         if (!featuredSection || !article) return;
+
+        const image = featuredSection.querySelector(".featured-image img");
+        if (image) {
+            if (article.image) {
+                image.src = article.image;
+                image.alt = article.title || "Featured Insight";
+                image.style.display = "block";
+            } else {
+                image.style.display = "none";
+            }
+        }
+
         const content = featuredSection.querySelector(".featured-content");
         if (!content) return;
 
@@ -175,12 +187,22 @@
         .then(data => {
             if (!data.success) throw new Error(data.error || "Unable to load Insights.");
             const articles = Array.isArray(data.articles) ? data.articles : [];
+
+            // Keep the website strictly date-wise, newest first.
+            articles.sort((a, b) => {
+                const da = new Date(a.date || 0).getTime();
+                const db = new Date(b.date || 0).getTime();
+                return db - da;
+            });
+
             window.RHSA_INSIGHTS_ARTICLES = {};
             articles.forEach(article => { window.RHSA_INSIGHTS_ARTICLES[article.id] = article; });
 
             if (!articles.length) {
                 const latest = document.getElementById("rhsa-latest-insights");
                 if (latest) latest.remove();
+                const image = featuredSection && featuredSection.querySelector(".featured-image img");
+                if (image) image.style.display = "none";
                 return;
             }
 
