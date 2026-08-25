@@ -39,6 +39,13 @@ function property_value($properties, $names, $default = '') {
             if ($type === 'url') return $property['url'] ?? $default;
             if ($type === 'checkbox') return !empty($property['checkbox']) ? 'Yes' : 'No';
             if ($type === 'number') return (string)($property['number'] ?? $default);
+            if ($type === 'files') {
+                foreach (($property['files'] ?? []) as $file) {
+                    if (($file['type'] ?? '') === 'external') return $file['external']['url'] ?? $default;
+                    if (($file['type'] ?? '') === 'file') return $file['file']['url'] ?? $default;
+                }
+                return $default;
+            }
         }
     }
     return $default;
@@ -241,7 +248,7 @@ foreach (($data['results'] ?? []) as $page) {
 
     if ($status !== '' && strcasecmp(trim($status), 'Published') !== 0) continue;
 
-    $image = property_value($properties, ['Image', 'Featured Image', 'Image URL'], '');
+    $image = property_value($properties, ['Cover Image', 'Image', 'Featured Image', 'Image URL'], '');
     if ($image === '') $image = cover_url($page);
 
     $firstImage = '';
