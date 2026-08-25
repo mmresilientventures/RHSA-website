@@ -2,7 +2,7 @@
 /**
  * RHSA Insights — Notion database + article content endpoint
  *
- * The Notion token remains server-side in ../notion-config.php.
+ * Notion remains the CMS. The token stays server-side in ../notion-config.php.
  */
 
 header('Content-Type: application/json; charset=utf-8');
@@ -67,6 +67,7 @@ function notion_request($url, $token) {
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $curlError = curl_error($ch);
     curl_close($ch);
+
     if ($response === false || $curlError || $httpCode < 200 || $httpCode >= 300) return null;
     return json_decode($response, true);
 }
@@ -91,28 +92,44 @@ function rich_text_html($items) {
     return $html;
 }
 
+function image_url_from_block($block) {
+    if (($block['type'] ?? '') !== 'image') return '';
+    $data = $block['image'] ?? [];
+    $type = $data['type'] ?? '';
+    if ($type === 'external') return $data['external']['url'] ?? '';
+    if ($type === 'file') return $data['file']['url'] ?? '';
+    return '';
+}
+
 function block_html($block, &$firstImage = null) {
     $type = $block['type'] ?? '';
     $data = $block[$type] ?? [];
+
     switch ($type) {
         case 'paragraph':
             $html = rich_text_html($data['rich_text'] ?? []);
             return $html !== '' ? '<p>' . $html . '</p>' : '<div class="notion-spacer"></div>';
-        case 'heading_1': return '<h2>' . rich_text_html($data['rich_text'] ?? []) . '</h2>';
-        case 'heading_2': return '<h3>' . rich_text_html($data['rich_text'] ?? []) . '</h3>';
-        case 'heading_3': return '<h4>' . rich_text_html($data['rich_text'] ?? []) . '</h4>';
-        case 'bulleted_list_item': return '<li>' . rich_text_html($data['rich_text'] ?? []) . '</li>';
-        case 'numbered_list_item': return '<li>' . rich_text_html($data['rich_text'] ?? []) . '</li>';
-        case 'quote': return '<blockquote>' . rich_text_html($data['rich_text'] ?? []) . '</blockquote>';
-        case 'callout': return '<div class="notion-callout">' . rich_text_html($data['rich_text'] ?? []) . '</div>';
-        case 'divider': return '<hr>';
+        case 'heading_1':
+            return '<h2>' . rich_text_html($data['rich_text'] ?? []) . '</h2>';
+        case 'heading_2':
+            return '<h3>' . rich_text_html($data['rich_text'] ?? []) . '</h3>';
+        case 'heading_3':
+            return '<h4>' . rich_text_html($data['rich_text'] ?? []) . '</h4>';
+        case 'bulleted_list_item':
+            return '<li>' . rich_text_html($data['rich_text'] ?? []) . '</li>';
+        case 'numbered_list_item':
+            return '<li>' . rich_text_html($data['rich_text'] ?? []) . '</li>';
+        case 'quote':
+            return '<blockquote>' . rich_text_html($data['rich_text'] ?? []) . '</blockquote>';
+        case 'callout':
+            return '<div class="notion-callout">' . rich_text_html($data['rich_text'] ?? []) . '</div>';
+        case 'divider':
+            return '<hr>';
         case 'code':
             $code = htmlspecialchars(plain_text_from_rich_text($data['rich_text'] ?? []), ENT_QUOTES, 'UTF-8');
             return '<pre><code>' . $code . '</code></pre>';
         case 'image':
-            $url = '';
-            if (($data['type'] ?? '') === 'external') $url = $data['external']['url'] ?? '';
-            if (($data['type'] ?? '') === 'file') $url = $data['file']['url'] ?? '';
+            $url = image_url_from_block($block);
             if ($url && preg_match('/^https?:\/\//i', $url)) {
                 if ($firstImage === null || $firstImage === '') $firstImage = $url;
                 return '<figure><img src="' . htmlspecialchars($url, ENT_QUOTES, 'UTF-8') . '" alt=""></figure>';
@@ -121,7 +138,9 @@ function block_html($block, &$firstImage = null) {
         case 'bookmark':
         case 'embed':
             $url = $data['url'] ?? '';
-            if ($url && preg_match('/^https?:\/\//i', $url)) return '<p><a href="' . htmlspecialchars($url, ENT_QUOTES, 'UTF-8') . '" target="_blank" rel="noopener noreferrer">View resource</a></p>';
+            if ($url && preg_match('/^https?:\/\//i', $url)) {
+                return '<p><a href="' . htmlspecialchars($url, ENT_QUOTES, 'UTF-8') . '" target="_blank" rel="noopener noreferrer">View resource</a></p>';
+            }
             return '';
         default:
             return '';
@@ -129,29 +148,46 @@ function block_html($block, &$firstImage = null) {
 }
 
 function page_content_html($pageId, $token, &$firstImage = '') {
-    $url = 'https://api.notion.com/v1/blocks/' . rawurlencode($pageId) . '/children?page_size=100';
-    $data = notion_request($url, $token);
-    if (!is_array($data)) return '';
-
     $html = '';
     $listType = null;
-    foreach (($data['results'] ?? []) as $block) {
-        $type = $block['type'] ?? '';
-        if ($type === 'bulleted_list_item' || $type === 'numbered_list_item') {
-            if ($listType !== $type) {
-                if ($listType !== null) $html .= '</' . ($listType === 'bulleted_list_item' ? 'ul' : 'ol') . '>';
-                $listType = $type;
-                $html .= '<' . ($type === 'bulleted_list_item' ? 'ul' : 'ol') . '>';
+    $cursor = null;
+    $guard = 0;
+
+    do {
+        $url = 'https://api.notion.com/v1/blocks/' . rawurlencode($pageId) . '/children?page_size=100';
+        if ($cursor) $url .= '&start_cursor=' . rawurlencode($cursor);
+
+        $data = notion_request($url, $token);
+        if (!is_array($data)) break;
+
+        foreach (($data['results'] ?? []) as $block) {
+            $type = $block['type'] ?? '';
+
+            if ($type === 'image') {
+                $image = image_url_from_block($block);
+                if ($firstImage === '' && $image !== '') $firstImage = $image;
             }
-            $html .= block_html($block, $firstImage);
-        } else {
-            if ($listType !== null) {
-                $html .= '</' . ($listType === 'bulleted_list_item' ? 'ul' : 'ol') . '>';
-                $listType = null;
+
+            if ($type === 'bulleted_list_item' || $type === 'numbered_list_item') {
+                if ($listType !== $type) {
+                    if ($listType !== null) $html .= '</' . ($listType === 'bulleted_list_item' ? 'ul' : 'ol') . '>';
+                    $listType = $type;
+                    $html .= '<' . ($type === 'bulleted_list_item' ? 'ul' : 'ol') . '>';
+                }
+                $html .= block_html($block, $firstImage);
+            } else {
+                if ($listType !== null) {
+                    $html .= '</' . ($listType === 'bulleted_list_item' ? 'ul' : 'ol') . '>';
+                    $listType = null;
+                }
+                $html .= block_html($block, $firstImage);
             }
-            $html .= block_html($block, $firstImage);
         }
-    }
+
+        $cursor = !empty($data['has_more']) ? ($data['next_cursor'] ?? null) : null;
+        $guard++;
+    } while ($cursor && $guard < 10);
+
     if ($listType !== null) $html .= '</' . ($listType === 'bulleted_list_item' ? 'ul' : 'ol') . '>';
     return $html;
 }
@@ -196,19 +232,21 @@ $articles = [];
 foreach (($data['results'] ?? []) as $page) {
     $properties = $page['properties'] ?? [];
     $pageId = $page['id'] ?? '';
+
     $title = property_value($properties, ['Title', 'Name', 'Article Title'], 'Untitled Insight');
     $category = property_value($properties, ['Category', 'Type', 'Topic'], 'RHSA Insights');
     $excerpt = property_value($properties, ['Excerpt', 'Summary', 'Description'], '');
     $date = property_value($properties, ['Published Date', 'Publish Date', 'Date', 'Published'], $page['last_edited_time'] ?? '');
     $status = property_value($properties, ['Status'], '');
-    $image = property_value($properties, ['Image', 'Featured Image', 'Image URL', 'Cover'], '');
+
+    if ($status !== '' && strcasecmp(trim($status), 'Published') !== 0) continue;
+
+    $image = property_value($properties, ['Image', 'Featured Image', 'Image URL'], '');
     if ($image === '') $image = cover_url($page);
 
     $firstImage = '';
     $content = $pageId ? page_content_html($pageId, $notionToken, $firstImage) : '';
     if ($image === '' && $firstImage !== '') $image = $firstImage;
-
-    if ($status !== '' && strcasecmp(trim($status), 'Published') !== 0) continue;
 
     $articles[] = [
         'id' => $pageId,
@@ -223,4 +261,7 @@ foreach (($data['results'] ?? []) as $page) {
     ];
 }
 
-echo json_encode(['success' => true, 'articles' => $articles], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+echo json_encode(
+    ['success' => true, 'articles' => $articles],
+    JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+);
