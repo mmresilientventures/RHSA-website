@@ -1,0 +1,257 @@
+/* ==========================================================
+   RHSA INSIGHTS — NOTION ARTICLES & ARTICLE MODAL
+   ========================================================== */
+
+.rhsa-latest-insights {
+    background: #f8f9fb;
+}
+
+.notion-article-card {
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(15, 56, 110, 0.10);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(15, 56, 110, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.notion-article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(15, 56, 110, 0.12);
+}
+
+.notion-article-image {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.notion-article-content {
+    padding: 28px;
+}
+
+.notion-category,
+.featured-category {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #E19A32;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.notion-article-content h3 {
+    margin-bottom: 12px;
+    color: #0F386E;
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.notion-article-content p {
+    margin-bottom: 16px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notion-article-meta {
+    margin: 10px 0 18px;
+    color: #777;
+    font-size: 13px;
+}
+
+.notion-read-more {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #0F386E;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.notion-read-more:hover {
+    color: #E19A32;
+}
+
+body.rhsa-modal-open {
+    overflow: hidden;
+}
+
+.rhsa-insight-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.rhsa-insight-modal.is-open {
+    display: flex;
+}
+
+.rhsa-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(7, 27, 54, 0.78);
+    backdrop-filter: blur(3px);
+}
+
+.rhsa-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(900px, 100%);
+    max-height: min(88vh, 900px);
+    overflow: hidden;
+    background: #fffdf8;
+    border-radius: 12px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.rhsa-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    z-index: 3;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: #0F386E;
+    color: #ffffff;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.rhsa-modal-inner {
+    max-height: min(88vh, 900px);
+    overflow-y: auto;
+    padding: 58px 72px 64px;
+}
+
+.rhsa-modal-category {
+    margin-bottom: 10px;
+    color: #E19A32;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+}
+
+.rhsa-modal-inner h2 {
+    margin: 0 50px 8px 0;
+    color: #0F386E;
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.rhsa-modal-date {
+    margin-bottom: 30px;
+    color: #777;
+    font-size: 13px;
+}
+
+.rhsa-modal-content {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.rhsa-modal-content p {
+    margin: 0 0 20px;
+}
+
+.rhsa-modal-content h2,
+.rhsa-modal-content h3,
+.rhsa-modal-content h4 {
+    margin: 32px 0 14px;
+    color: #0F386E;
+    line-height: 1.35;
+}
+
+.rhsa-modal-content h2 { font-size: 27px; }
+.rhsa-modal-content h3 { font-size: 23px; }
+.rhsa-modal-content h4 { font-size: 19px; }
+
+.rhsa-modal-content ul,
+.rhsa-modal-content ol {
+    margin: 0 0 22px;
+    padding-left: 24px;
+}
+
+.rhsa-modal-content li {
+    margin-bottom: 8px;
+}
+
+.rhsa-modal-content blockquote {
+    margin: 26px 0;
+    padding: 16px 22px;
+    border-left: 3px solid #E19A32;
+    background: rgba(15, 56, 110, 0.045);
+    color: #444;
+}
+
+.rhsa-modal-content hr {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid rgba(15, 56, 110, 0.15);
+}
+
+.rhsa-modal-content figure {
+    margin: 28px 0;
+}
+
+.rhsa-modal-content figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+.rhsa-modal-content a {
+    color: #0F386E;
+    font-weight: 600;
+}
+
+.rhsa-modal-content code {
+    padding: 2px 5px;
+    border-radius: 3px;
+    background: #f0f1f3;
+}
+
+.rhsa-modal-content pre {
+    overflow-x: auto;
+    margin: 24px 0;
+    padding: 18px;
+    background: #f1f2f4;
+    border-radius: 6px;
+}
+
+@media (max-width: 767px) {
+    .notion-article-content {
+        padding: 22px;
+    }
+
+    .rhsa-insight-modal {
+        padding: 12px;
+    }
+
+    .rhsa-modal-inner {
+        padding: 48px 24px 38px;
+    }
+
+    .rhsa-modal-inner h2 {
+        font-size: 28px;
+    }
+
+    .rhsa-modal-content {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+}
