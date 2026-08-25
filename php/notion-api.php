@@ -91,7 +91,7 @@ function rich_text_html($items) {
     return $html;
 }
 
-function block_html($block) {
+function block_html($block, &$firstImage = null) {
     $type = $block['type'] ?? '';
     $data = $block[$type] ?? [];
     switch ($type) {
@@ -114,6 +114,7 @@ function block_html($block) {
             if (($data['type'] ?? '') === 'external') $url = $data['external']['url'] ?? '';
             if (($data['type'] ?? '') === 'file') $url = $data['file']['url'] ?? '';
             if ($url && preg_match('/^https?:\/\//i', $url)) {
+                if ($firstImage === null || $firstImage === '') $firstImage = $url;
                 return '<figure><img src="' . htmlspecialchars($url, ENT_QUOTES, 'UTF-8') . '" alt=""></figure>';
             }
             return '';
@@ -127,7 +128,7 @@ function block_html($block) {
     }
 }
 
-function page_content_html($pageId, $token) {
+function page_content_html($pageId, $token, &$firstImage = '') {
     $url = 'https://api.notion.com/v1/blocks/' . rawurlencode($pageId) . '/children?page_size=100';
     $data = notion_request($url, $token);
     if (!is_array($data)) return '';
@@ -142,13 +143,13 @@ function page_content_html($pageId, $token) {
                 $listType = $type;
                 $html .= '<' . ($type === 'bulleted_list_item' ? 'ul' : 'ol') . '>';
             }
-            $html .= block_html($block);
+            $html .= block_html($block, $firstImage);
         } else {
             if ($listType !== null) {
                 $html .= '</' . ($listType === 'bulleted_list_item' ? 'ul' : 'ol') . '>';
                 $listType = null;
             }
-            $html .= block_html($block);
+            $html .= block_html($block, $firstImage);
         }
     }
     if ($listType !== null) $html .= '</' . ($listType === 'bulleted_list_item' ? 'ul' : 'ol') . '>';
@@ -199,8 +200,15 @@ foreach (($data['results'] ?? []) as $page) {
     $category = property_value($properties, ['Category', 'Type', 'Topic'], 'RHSA Insights');
     $excerpt = property_value($properties, ['Excerpt', 'Summary', 'Description'], '');
     $date = property_value($properties, ['Published Date', 'Publish Date', 'Date', 'Published'], $page['last_edited_time'] ?? '');
+    $status = property_value($properties, ['Status'], '');
     $image = property_value($properties, ['Image', 'Featured Image', 'Image URL', 'Cover'], '');
     if ($image === '') $image = cover_url($page);
+
+    $firstImage = '';
+    $content = $pageId ? page_content_html($pageId, $notionToken, $firstImage) : '';
+    if ($image === '' && $firstImage !== '') $image = $firstImage;
+
+    if ($status !== '' && strcasecmp(trim($status), 'Published') !== 0) continue;
 
     $articles[] = [
         'id' => $pageId,
@@ -208,9 +216,10 @@ foreach (($data['results'] ?? []) as $page) {
         'category' => $category,
         'excerpt' => $excerpt,
         'date' => $date,
+        'status' => $status,
         'image' => $image,
         'url' => $page['url'] ?? '',
-        'content' => $pageId ? page_content_html($pageId, $notionToken) : ''
+        'content' => $content
     ];
 }
 
