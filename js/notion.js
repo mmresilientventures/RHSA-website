@@ -58,14 +58,21 @@
     function renderFeatured(article) {
         if (!featuredSection || !article) return;
 
-        const image = featuredSection.querySelector(".featured-image img");
-        if (image) {
+        const imageColumn = featuredSection.querySelector(".featured-image")?.closest(".col-lg-5");
+        const imageWrap = featuredSection.querySelector(".featured-image");
+
+        if (imageWrap) {
+            imageWrap.innerHTML = "";
             if (article.image) {
+                const image = document.createElement("img");
                 image.src = article.image;
                 image.alt = article.title || "Featured Insight";
-                image.style.display = "block";
-            } else {
-                image.style.display = "none";
+                image.className = "img-fluid";
+                image.loading = "eager";
+                imageWrap.appendChild(image);
+                if (imageColumn) imageColumn.style.display = "";
+            } else if (imageColumn) {
+                imageColumn.style.display = "none";
             }
         }
 
@@ -101,7 +108,7 @@
                     ${articles.map(article => `
                         <div class="col-lg-4 col-md-6 mb-4">
                             <article class="notion-article-card">
-                                ${article.image ? `<img class="notion-article-image" src="${escapeHtml(article.image)}" alt="${escapeHtml(article.title)}">` : ""}
+                                ${article.image ? `<img class="notion-article-image" src="${escapeHtml(article.image)}" alt="${escapeHtml(article.title)}" loading="lazy">` : ""}
                                 <div class="notion-article-content">
                                     ${article.category ? `<span class="notion-category">${escapeHtml(article.category)}</span>` : ""}
                                     <h3>${escapeHtml(article.title)}</h3>
@@ -179,7 +186,7 @@
     injectStylesheet();
     removeRetiredSections();
 
-    fetch(endpoint, { headers: { "Accept": "application/json" } })
+    fetch(endpoint, { headers: { "Accept": "application/json" }, cache: "no-store" })
         .then(response => {
             if (!response.ok) throw new Error("Unable to load Insights.");
             return response.json();
@@ -188,7 +195,6 @@
             if (!data.success) throw new Error(data.error || "Unable to load Insights.");
             const articles = Array.isArray(data.articles) ? data.articles : [];
 
-            // Keep the website strictly date-wise, newest first.
             articles.sort((a, b) => {
                 const da = new Date(a.date || 0).getTime();
                 const db = new Date(b.date || 0).getTime();
@@ -201,8 +207,10 @@
             if (!articles.length) {
                 const latest = document.getElementById("rhsa-latest-insights");
                 if (latest) latest.remove();
-                const image = featuredSection && featuredSection.querySelector(".featured-image img");
-                if (image) image.style.display = "none";
+                if (featuredSection) {
+                    const imageColumn = featuredSection.querySelector(".featured-image")?.closest(".col-lg-5");
+                    if (imageColumn) imageColumn.style.display = "none";
+                }
                 return;
             }
 
