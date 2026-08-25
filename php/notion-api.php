@@ -1,9 +1,8 @@
 <?php
 /**
- * RHSA Insights — Notion database endpoint
+ * RHSA Insights — Notion database + article content endpoint
  *
- * The Notion token is kept on the server. On Hostinger it is read from
- * /notion-config.php outside public_html.
+ * The Notion token remains server-side in ../notion-config.php.
  */
 
 header('Content-Type: application/json; charset=utf-8');
@@ -81,7 +80,7 @@ function rich_text_html($items) {
         if (!empty($ann['italic'])) $text = '<em>' . $text . '</em>';
         if (!empty($ann['underline'])) $text = '<u>' . $text . '</u>';
         if (!empty($ann['strikethrough'])) $text = '<s>' . $text . '</s>';
-        if (($ann['code'] ?? false)) $text = '<code>' . $text . '</code>';
+        if (!empty($ann['code'])) $text = '<code>' . $text . '</code>';
         $href = $item['href'] ?? ($item['text']['link']['url'] ?? '');
         if ($href && preg_match('/^https?:\/\//i', $href)) {
             $safe = htmlspecialchars($href, ENT_QUOTES, 'UTF-8');
