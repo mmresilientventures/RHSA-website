@@ -1,0 +1,11 @@
+# Server-only configuration and live lead data
+notion-config.php
+php/data/
+
+# Local / temporary test files
+php/test-phpmailer.php
+
+# Local OS files
+.DS_Store
+Thumbs.db
+images/desktop.ini
