@@ -10,7 +10,7 @@ header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
 
 $config = require dirname(__DIR__, 3) . '/notion-config.php';
 $notionToken = $config['notion_token'] ?? '';
-$databaseId = '3c7f04b57752807c8d15d92238160e54';
+$databaseId = '3cf04b57752807c8d15d92238160e54';
 
 if ($notionToken === '') {
     http_response_code(503);
