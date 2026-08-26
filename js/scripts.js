@@ -490,3 +490,18 @@ if ($("#clock").length && $.fn.countdown) {
 	});
 
 })(jQuery);
+
+/* ==================================================
+   RHSA Updates loader — Contact page only
+================================================== */
+(function () {
+    "use strict";
+
+    if (!/contact-us\.html$/i.test(window.location.pathname)) return;
+    if (document.querySelector('script[data-rhsa-updates-loader]')) return;
+
+    var script = document.createElement("script");
+    script.src = "js/rhsa-updates.js";
+    script.dataset.rhsaUpdatesLoader = "true";
+    document.body.appendChild(script);
+})();
