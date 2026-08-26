@@ -191,10 +191,14 @@ foreach (($data['results'] ?? []) as $page) {
     $properties = $page['properties'] ?? [];
     $pageId = $page['id'] ?? '';
 
-    $title = property_value($properties, ['Name', 'Title'], 'Untitled Update');
+    $title = property_value($properties, ['Name', 'Title'], '');
     $category = property_value($properties, ['Category'], '');
     $date = property_value($properties, ['Publish Date', 'Published Date', 'Date'], '');
     $galleryLink = property_value($properties, ['Gallery Link', 'Gallery URL'], '');
+
+    /* Ignore accidental empty rows in the database. */
+    if ($title === '' || $date === '') continue;
+
     $content = $pageId ? page_content_html($pageId, $notionToken) : '';
 
     $updates[] = [
