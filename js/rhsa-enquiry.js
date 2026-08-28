@@ -51,15 +51,15 @@ No enquiry form is placed in the navbar.
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="rhsa-phone">Contact Number *</label>
-                                <input id="rhsa-phone" name="phone" class="form-control" type="tel" required>
+                                <label for="rhsa-phone">Contact Number</label>
+                                <input id="rhsa-phone" name="phone" class="form-control" type="tel">
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="rhsa-email">Email ID *</label>
-                        <input id="rhsa-email" name="email" class="form-control" type="email" required>
+                        <label for="rhsa-email">Email ID</label>
+                        <input id="rhsa-email" name="email" class="form-control" type="email">
                     </div>
 
                     <div class="form-group" id="rhsa-audience-wrap">
@@ -258,6 +258,31 @@ No enquiry form is placed in the navbar.
         const form = e.currentTarget;
         const action = document.getElementById("rhsa-action").value;
         const status = document.getElementById("rhsa-status");
+
+        // CONTACT RULES
+        // Name is required. Either phone OR email is required.
+        // Brochure requests require a valid email address.
+        const name = document.getElementById("rhsa-name").value.trim();
+        const phone = document.getElementById("rhsa-phone").value.trim();
+        const email = document.getElementById("rhsa-email").value.trim();
+
+        let validationMessage = "";
+        if (!name) {
+            validationMessage = "Please enter your name.";
+        } else if (!phone && !email) {
+            validationMessage = "Please enter either your mobile number or email address.";
+        } else if (email && !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
+            validationMessage = "Please enter a valid email address.";
+        } else if (action === "brochure" && !email) {
+            validationMessage = "Please enter your email address so we can send you the brochure.";
+        }
+
+        if (validationMessage) {
+            status.classList.add("is-visible");
+            status.textContent = validationMessage;
+            return;
+        }
+
         const data = new FormData(form);
 
         data.set("course", document.getElementById("rhsa-course").value ||
