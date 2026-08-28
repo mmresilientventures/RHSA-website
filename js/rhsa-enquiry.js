@@ -79,16 +79,20 @@ No enquiry form is placed in the navbar.
                         <label for="rhsa-course-select">Course / Programme</label>
                         <select id="rhsa-course-select" name="course_select" class="form-control">
                             <option value="">Select course / programme</option>
+                            <!-- Entry-Level Courses -->
                             <option>Medical Records Assistant</option>
                             <option>Front Desk Coordinator</option>
                             <option>General Duty Assistant</option>
                             <option>Phlebotomy Technician</option>
+
+                            <!-- Workforce Upskilling Programmes -->
                             <option>Communication & Soft Skills Training</option>
+                            <option>Infection Control Practices – Direct Patient Care Staff</option>
+                            <option>Infection Control Practices – Healthcare Support Staff</option>
                             <option>Infection Control Nurse</option>
-                            <option>Biomedical Waste Management</option>
-                            <option>Basic Infection Control at Healthcare Setup</option>
-                            <option>Basic Sanitization & Infection Control at Workplace</option>
-                            <option>Basic Cardiopulmonary Life Support (BCLS)</option>
+                            <option>Quality Implementation Training</option>
+
+                            <!-- Institutional Programme -->
                             <option>School Health & Wellness Programme</option>
                             <option>Other RHSA Programme</option>
                         </select>
