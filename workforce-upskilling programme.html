@@ -386,7 +386,7 @@ content="School Health & Wellness Programme, Health & Wellness Skills, First Aid
             <!-- Quality Implementation Training -->
             <div class="programme-card-wrap">
                 <div class="programme-card">
-                    <div class="programme-icon"><img src="images/pdp-quality-implementation-training.jpg" alt=""></div>
+                    <div class="programme-icon"><img src="images/pdp-quality-implementation-tainig.jpg" alt=""></div>
                     <h3>Quality Implementation Training</h3>
                     <p class="programme-tagline">Translate quality requirements into practical systems and continuous improvement.</p>
                     <div class="programme-info"><span><i class="fa-regular fa-clock"></i> Duration: 60 Hours</span></div>
@@ -417,13 +417,52 @@ content="School Health & Wellness Programme, Health & Wellness Skills, First Aid
 </section>
 
 <style>
+/* Customized Training Solutions — enlarged image and balanced 3-card-width layout */
+.custom-training-inline{
+  display:flex;
+  align-items:center;
+  gap:32px;
+  min-height:250px;
+  padding:32px 38px;
+}
+.custom-training-inline .custom-training-image{
+  flex:0 0 260px !important;
+  width:260px !important;
+  height:180px !important;
+  max-width:none !important;
+  overflow:hidden;
+  border-radius:12px;
+}
+.custom-training-inline .custom-training-image img{
+  display:block;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  object-fit:cover;
+  border-radius:12px;
+}
+.custom-training-inline .custom-training-content{
+  flex:1 1 auto;
+}
 @media (max-width: 991px){
   .programme-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
   .custom-training-grid-item{grid-column:span 2 !important;}
+  .custom-training-inline{padding:28px;gap:24px;}
+  .custom-training-inline .custom-training-image{
+    flex-basis:220px !important;
+    width:220px !important;
+    height:160px !important;
+  }
 }
 @media (max-width: 575px){
   .programme-grid{grid-template-columns:1fr !important;}
   .custom-training-grid-item{grid-column:span 1 !important;}
+  .custom-training-inline{display:block;padding:24px;}
+  .custom-training-inline .custom-training-image{
+    width:100% !important;
+    height:220px !important;
+    margin:0 0 22px;
+  }
 }
 </style>
 
