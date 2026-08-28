@@ -271,7 +271,7 @@ No enquiry form is placed in the navbar.
             validationMessage = "Please enter your name.";
         } else if (!phone && !email) {
             validationMessage = "Please enter either your mobile number or email address.";
-        } else if (email && !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
+        } else if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             validationMessage = "Please enter a valid email address.";
         } else if (action === "brochure" && !email) {
             validationMessage = "Please enter your email address so we can send you the brochure.";
